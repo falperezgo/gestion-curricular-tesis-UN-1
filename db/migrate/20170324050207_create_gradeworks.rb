@@ -9,6 +9,7 @@ class CreateGradeworks < ActiveRecord::Migration[5.0]
       t.time :hour
       t.text :locale
       t.string :semester
+
       t.timestamps
     end
   end

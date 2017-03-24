@@ -1,0 +1,2 @@
+class FileGradework < ApplicationRecord
+end
