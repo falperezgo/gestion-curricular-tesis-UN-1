@@ -1,25 +1,26 @@
 development:
+  #<<: *default
+  #database: GestionMaestria_development
   adapter: postgresql
   encoding: utf8
-  database: gestion_curricular
+  database: GestionMaestria_development
   pool: 5
   username: postgres
-  password: 1qa2ws3ed
+  password: 123
 
-test: &TEST
+test:
+  #<<: *default
   adapter: postgresql
   encoding: utf8
-  database: gestion_test
+  database: GestionMaestria_test
   username: postgres
-  password: 1qa2ws3ed
+  password: 123
 
+#
 production:
   adapter: postgresql
   encoding: utf8
-  database: project_production
+  database: GestionMaestria_development
   pool: 5
-  username:
-  password:
-
-cucumber:
-  <<: *TEST
+  username: 
+  password: 
