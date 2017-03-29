@@ -13,5 +13,8 @@
 !/log/.keep
 !/tmp/.keep
 
+#ignore config files
+/config/*
+
 # Ignore Byebug command history file.
 .byebug_history

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  director: one
+  score: 
+  anotation: MyText
+  timestamp: 2017-03-24 00:00:29
+
+two:
+  director: two
+  score: 
+  anotation: MyText
+  timestamp: 2017-03-24 00:00:29
