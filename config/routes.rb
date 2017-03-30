@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :juries
+  resources :file_gradeworks
   resources :students
   get 'contact_us/index'
 
