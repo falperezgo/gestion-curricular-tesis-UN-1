@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :students
   get 'contact_us/index'
 
   get 'home/index'
