@@ -28,9 +28,15 @@ h1{
 	}
 
 h2 {
-    margin-top: 1.3em;
+  color: rgb(79, 79, 79);
+  font-size:21px;
+  margin-top: 1.3em;
 }
-
+h3 {
+  color: rgb(79, 79, 79);
+  font-size:19px;
+  margin-top: 1.3em;
+}
 .btn {
     padding: 4px 24px;
     border: 0 none;
@@ -40,17 +46,17 @@ h2 {
 }
 
 .btn-primary {
-   
+
     background:  #0e84b1;
     color: #ffffff !important;
 }
 
 
 .contenedorprincipal {
-    max-width: 800px;
+    max-width: 1000px;
 	margin-left:auto;
 	margin-right:auto;
-	
+
 }
 
 .cajatexto{
@@ -63,3 +69,17 @@ h2 {
 	border-radius:5px;
 }
 
+.breadcrumb-class {
+    font-size:13px;
+    line-height: 30px;
+    color: #323232;
+    margin: 50px 0 0 0;
+    border-bottom: 1px dotted #646464;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-md"] {
+        width: 100%;
+    }
+}
