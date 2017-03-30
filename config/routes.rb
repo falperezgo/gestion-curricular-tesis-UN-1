@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   resources :juries
   resources :file_gradeworks
   resources :students
+  resources :administrators
+  resources :directors
+  
+  
   get 'contact_us/index'
 
   get 'home/index'
