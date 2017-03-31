@@ -14,8 +14,7 @@
 !/tmp/.keep
 
 #ignore config files
-/config/database.yml
-Gemfile.lock
+config/database.yml
 
 # Ignore Byebug command history file.
 .byebug_history
