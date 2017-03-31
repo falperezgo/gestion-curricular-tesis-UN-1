@@ -26,10 +26,6 @@ $primary-blue: #0E84B1;
     margin-top: 100px;
 }
 
-.link-info{
-    display: block;
-}
-
 .span9{
     border: 1px solid #000;
     width: 935px;
@@ -50,15 +46,14 @@ $primary-blue: #0E84B1;
 .DIV_LogTop {
     background-color: $primary-blue ; 
     color: white;
+    height: 40px;
 }
 
 .LoginTitle {
-    margin-top: 0;
-    margin-bottom: 0;
     text-align: left;
     color: azure;
-    font-size: 14px;
-    padding: 5px;
+    font-size: 20px;
+    padding: 10px;
 }
 
 .FaiconColor {
@@ -67,4 +62,16 @@ $primary-blue: #0E84B1;
 
 .LogOptions {
     font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.remember-password
+{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.home-title
+{
+    margin-bottom: 20px;
 }

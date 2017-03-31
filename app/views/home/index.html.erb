@@ -13,14 +13,14 @@
 
 
 <!--Seccion Login            -->
-<div class="row">
+<div class="row" style="margin-top: 20px;">
 
 <div class=" DIV_LOG col-sm-5 col-md-3" >
 	<div class = "DIV_LogTop">
         <h1 class = "LoginTitle">Entrar</h1>
     </div>
 <!--Login-->   
-	<div style="background-color: #ffffff">
+	<div style="background-color: #ffffff; padding-top: 10px; padding-bottom: 10px;">
         <form id="FORM_8" method="post" action="https://campus.virtual.unal.edu.co/login/index.php">
 		  <div>
 		  <label for="login_username">Nombre de usuario</label>
@@ -30,10 +30,8 @@
 		  <label for="login_password">Contraseña</label>
 				<input class="cajatexto" style="width:169.656px; margin-left:auto; margin-right:auto;" type="password" placeholder="Contraseña" name="password" id="INPUT_14"/>
 		  </div>
-		  <div>
-				<br>
-					<input type="checkbox" name="rememberusername" value="1" class = "LogOptions" /> Recordar nombre de usuario
-				<br>
+		  <div class="remember-password">
+				<input type="checkbox" name="rememberusername" value="1" class = "LogOptions" /> Recordar nombre de usuario
 		  </div>
 		  <div>
 				<input type="submit" class= "btn btn-primary " value="Acceder" />
@@ -41,9 +39,6 @@
 		</form>
 		  <div>
 			<a href="https://campus.virtual.unal.edu.co/login/forgot_password.php" class="LogOptions">¿Ha extraviado la contraseña?</a>
-                      <a class="btn btn-primary" href="contact_us/index.html">
-            Ingresar
-        </a>
 		  </div>
 	</div>
 </div>
@@ -53,8 +48,8 @@
 
 <div class="col-sm-9 col-md-9" >
 
-        <div >
-            <h1 style="text-align: center">Bienvenidos y bienvenidas</h1>
+        <div style="margin-bottom: 20px;">
+            <h1 class="home-title" style="text-align: center">Bienvenidos y bienvenidas</h1>
             <p>La tesis de maestría es una de las modalidades de grado que ofrece la Universidad Nacional. Por medio de esta plataforma se realiza un manejo más sencillo de la información acerca de las tesis, estudiantes que las presentan y los jurados que las evalúan. Se facilita al usuario el manejo de información y de esta forma se automatiza el proceso de solicitúd, creación y seguimiento de tesis.
             </p>
 
