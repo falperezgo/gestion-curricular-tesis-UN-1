@@ -18,7 +18,6 @@ Rails.application.config.assets.precompile += %w( layout/tablet.css )
 Rails.application.config.assets.precompile += %w( layout/unal.css )
 
 Rails.application.config.assets.precompile += %w( layout/html5shiv.js )
-Rails.application.config.assets.precompile += %w( layout/jquery.js )
 Rails.application.config.assets.precompile += %w( layout/matchmedia.addListener.js )
 Rails.application.config.assets.precompile += %w( layout/matchmedia.polyfill.js )
 Rails.application.config.assets.precompile += %w( layout/respond.js )
