@@ -1,0 +1,42 @@
+<%= form_for(file_gradework) do |f| %>
+  <% if file_gradework.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(file_gradework.errors.count, "error") %> prohibited this file_gradework from being saved:</h2>
+
+      <ul>
+      <% file_gradework.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :path %>
+    <%= f.text_field :path %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :size %>
+    <%= f.text_field :size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Gradeworks_id %>
+    <%= f.text_field :Gradeworks_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

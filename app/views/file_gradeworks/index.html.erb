@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>File Gradeworks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Path</th>
+      <th>Description</th>
+      <th>Size</th>
+      <th>Gradeworks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @file_gradeworks.each do |file_gradework| %>
+      <tr>
+        <td><%= file_gradework.name %></td>
+        <td><%= file_gradework.path %></td>
+        <td><%= file_gradework.description %></td>
+        <td><%= file_gradework.size %></td>        
+        <td><%= link_to 'Show', file_gradework %></td>
+        <td><%= link_to 'Edit', edit_file_gradework_path(file_gradework) %></td>
+        <td><%= link_to 'Destroy', file_gradework, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New File Gradework', new_file_gradework_path %>

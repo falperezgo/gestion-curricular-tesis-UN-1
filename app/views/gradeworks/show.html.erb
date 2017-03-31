@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gradework.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @gradework.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @gradework.status %>
+</p>
+
+<p>
+  <strong>Delivery date:</strong>
+  <%= @gradework.delivery_date %>
+</p>
+
+<p>
+  <strong>Begin date:</strong>
+  <%= @gradework.begin_date %>
+</p>
+
+<p>
+  <strong>Hour:</strong>
+  <%= @gradework.hour %>
+</p>
+
+<p>
+  <strong>Locale:</strong>
+  <%= @gradework.locale %>
+</p>
+
+<p>
+  <strong>Semester:</strong>
+  <%= @gradework.semester %>
+</p>
+
+<%= link_to 'Edit', edit_gradework_path(@gradework) %> |
+<%= link_to 'Back', gradeworks_path %>
