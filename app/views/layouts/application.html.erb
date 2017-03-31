@@ -4,11 +4,29 @@
     <title>GestionMaestria</title>
     <%= csrf_meta_tags %>
 
+    
+    <!-- Unal layout assets-->
+    <%= stylesheet_link_tag "layout/base", media: "all" %>
+    <%= stylesheet_link_tag "layout/phone", media: "all" %>
+    <%= stylesheet_link_tag "layout/printer", media: "all" %>
+    <%= stylesheet_link_tag "layout/reset", media: "all" %>
+    <%= stylesheet_link_tag "layout/small", media: "all" %>
+    <%= stylesheet_link_tag "layout/tablet", media: "all" %>
+    <%= stylesheet_link_tag "layout/unal", media: "all" %>
+
+    <%= javascript_include_tag 'layout/html5shiv' %>
+    <%= javascript_include_tag 'layout/jquery' %>
+    <%= javascript_include_tag 'layout/matchmedia.addListener' %>
+    <%= javascript_include_tag 'layout/matchmedia.polyfill' %>
+    <%= javascript_include_tag 'layout/respond' %>
+    <%= javascript_include_tag 'layout/unal' %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= render "layouts/unal/sideBar" %>
   	<%= render "layouts/unal/header" %>
     <%= yield %>
     <%= render "layouts/unal/footer" %>

@@ -16,44 +16,6 @@ $font_1: sans-serif;
 //@extend-elements
 //original selectors
 //h1, h2, h3, h4, h5, h6
-%extend_1 {
-	color: $color_log_cabin_approx;
-	font-weight: 600;
-	line-height: 1.3;
-}
-
-
-body {
-	background: $color_silver_approx;
-	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-	box-shadow: 0 0 2px $black_6;
-	color: $black;
-	font-family: $font_0, $font_1;
-	font-size: 16px;
-	line-height: 1.5;
-	margin: 0 auto;
-	max-width: 800px;
-	padding: 2em 2em 4em;
-}
-h1 {
-	@extend %extend_1;
-}
-h2 {
-	@extend %extend_1;
-	margin-top: 1.3em;
-}
-h3 {
-	@extend %extend_1;
-}
-h4 {
-	@extend %extend_1;
-}
-h5 {
-	@extend %extend_1;
-}
-h6 {
-	@extend %extend_1;
-}
 
 container {
 	margin-top: 100px;
