@@ -5,29 +5,29 @@ $primary-blue: #0E84B1;
 
 
 .button{
-	width: 120px;
-	height: 30px;
-	border: 0px solid;
-	border-radius: 10px;
-	font-size: 18px;
+    width: 120px;
+    height: 30px;
+    border: 0px solid;
+    border-radius: 10px;
+    font-size: 18px;
 }
 
 .home-button{
-	@extend .button;
-	text-align: center;
-	margin-top: 30px;
+    @extend .button;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .bottom-gap{
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .content-temp{
-	margin-top: 100px;
+    margin-top: 100px;
 }
 
 .link-info{
-	display: block;
+    display: block;
 }
 
 .span9{

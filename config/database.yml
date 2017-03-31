@@ -31,7 +31,7 @@ development:
   database: GestionMaestria_development
   pool: 5
   username: postgres
-  password: 123
+  password: 12345
 
 test:
   #<<: *default
@@ -39,7 +39,7 @@ test:
   encoding: utf8
   database: GestionMaestria_test
   username: postgres
-  password: 123
+  password: 12345
 
 #
 production:
