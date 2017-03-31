@@ -1,23 +1,12 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$primary-blue: #0E84B1;
 
-$font-stack:    Verdana;
-$primary-color: #BCBCBC;
-$secondary-color: #666;
-$normal-text-color: #000000;
-
-body {
-  font: 100% $font-stack;
-  color: $normal-text-color !important;
-  background-color: $primary-color !important;
-}
 
 .button{
 	width: 120px;
 	height: 30px;
-	background-color: $secondary-color;
-	color: $primary-color;
 	border: 0px solid;
 	border-radius: 10px;
 	font-size: 18px;
@@ -41,6 +30,41 @@ body {
 	display: block;
 }
 
-a{
-	color: $normal-text-color !important;
+.span9{
+    border: 1px solid #000;
+    width: 935px;
+}
+
+.span3{
+}
+
+.container-fluid {
+    max-width: 1200px;
+}
+
+.DIV_LOG {
+    text-align: center;
+    width: 257.4px;
+}
+
+.DIV_LogTop {
+    background-color: $primary-blue ; 
+    color: white;
+}
+
+.LoginTitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left;
+    color: azure;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.FaiconColor {
+    color: rgb(3, 166, 239)
+}
+
+.LogOptions {
+    font-size: 11px;
 }
