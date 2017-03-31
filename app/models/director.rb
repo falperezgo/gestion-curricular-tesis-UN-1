@@ -1,7 +1,7 @@
 class Director < ApplicationRecord
 	has_many :gradework
 	
-	validates :firstname, :lastname,  :phone, presence: true	
+	validates :firstname, :lastname, :phone, presence: true	
 	validates :email, :identification, presence: true, uniqueness: true
 
 	scope :by_name, -> (firstname) { where firstname: firstname}

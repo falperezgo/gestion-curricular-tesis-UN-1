@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gradeworks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Delivery date</th>
+      <th>Begin date</th>
+      <th>Hour</th>
+      <th>Locale</th>
+      <th>Semester</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gradeworks.each do |gradework| %>
+      <tr>
+        <td><%= gradework.name %></td>
+        <td><%= gradework.description %></td>
+        <td><%= gradework.status %></td>
+        <td><%= gradework.delivery_date %></td>
+        <td><%= gradework.begin_date %></td>
+        <td><%= gradework.hour %></td>
+        <td><%= gradework.locale %></td>
+        <td><%= gradework.semester %></td>
+        <td><%= link_to 'Show', gradework %></td>
+        <td><%= link_to 'Edit', edit_gradework_path(gradework) %></td>
+        <td><%= link_to 'Destroy', gradework, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gradework', new_gradework_path %>

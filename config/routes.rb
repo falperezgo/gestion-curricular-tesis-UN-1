@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :feedbacks
+  resources :gradeworks
   resources :juries
   resources :file_gradeworks
   resources :students
