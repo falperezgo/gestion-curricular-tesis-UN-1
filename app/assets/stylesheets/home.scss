@@ -1,6 +1,8 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$primary-blue: #0E84B1;
+
 
 .button{
 	width: 120px;
@@ -46,7 +48,7 @@
 }
 
 .DIV_LogTop {
-    background-color: #0E84B1 ; 
+    background-color: $primary-blue ; 
     color: white;
 }
 
