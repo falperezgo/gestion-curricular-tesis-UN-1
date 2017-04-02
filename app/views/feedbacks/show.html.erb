@@ -1,13 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Anotations:</strong>
+  <%= @feedback.anotations %>
+</p>
+
+<p>
   <strong>Score:</strong>
   <%= @feedback.score %>
 </p>
 
 <p>
-  <strong>Anotation:</strong>
-  <%= @feedback.anotation %>
+  <strong>Gradework:</strong>
+  <%= @feedback.gradework %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @feedback.user %>
 </p>
 
 <%= link_to 'Edit', edit_feedback_path(@feedback) %> |

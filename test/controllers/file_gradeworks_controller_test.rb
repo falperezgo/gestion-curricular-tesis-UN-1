@@ -17,7 +17,7 @@ class FileGradeworksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create file_gradework" do
     assert_difference('FileGradework.count') do
-      post file_gradeworks_url, params: { file_gradework: { Gradeworks_id: @file_gradework.Gradeworks_id, description: @file_gradework.description, name: @file_gradework.name, path: @file_gradework.path, size: @file_gradework.size } }
+      post file_gradeworks_url, params: { file_gradework: { description: @file_gradework.description, gradework: @file_gradework.gradework, name: @file_gradework.name, path: @file_gradework.path, size: @file_gradework.size } }
     end
 
     assert_redirected_to file_gradework_url(FileGradework.last)
@@ -34,7 +34,7 @@ class FileGradeworksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update file_gradework" do
-    patch file_gradework_url(@file_gradework), params: { file_gradework: { Gradeworks_id: @file_gradework.Gradeworks_id, description: @file_gradework.description, name: @file_gradework.name, path: @file_gradework.path, size: @file_gradework.size } }
+    patch file_gradework_url(@file_gradework), params: { file_gradework: { description: @file_gradework.description, gradework: @file_gradework.gradework, name: @file_gradework.name, path: @file_gradework.path, size: @file_gradework.size } }
     assert_redirected_to file_gradework_url(@file_gradework)
   end
 

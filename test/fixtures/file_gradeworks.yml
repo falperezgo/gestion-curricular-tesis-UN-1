@@ -3,11 +3,13 @@
 one:
   name: MyString
   path: MyString
-  description: MyString
-  size: MyString
+  description: MyText
+  size: 1
+  gradework: 
 
 two:
   name: MyString
   path: MyString
-  description: MyString
-  size: MyString
+  description: MyText
+  size: 1
+  gradework: 
