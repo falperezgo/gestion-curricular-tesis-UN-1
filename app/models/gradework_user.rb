@@ -1,0 +1,2 @@
+class GradeworkUser < ApplicationRecord
+end

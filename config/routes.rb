@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  resources :role_users
   resources :file_gradeworks
   resources :feedbacks
   resources :user_roles
