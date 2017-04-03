@@ -12,13 +12,23 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :anotations %>
+    <%= f.text_area :anotations %>
+  </div>
+
+  <div class="field">
     <%= f.label :score %>
     <%= f.number_field :score %>
   </div>
 
   <div class="field">
-    <%= f.label :anotation %>
-    <%= f.text_area :anotation %>
+    <%= f.label :gradework %>
+    <%= f.text_field :gradework %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user %>
+    <%= f.text_field :user %>
   </div>
 
   <div class="actions">

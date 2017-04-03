@@ -16,69 +16,38 @@
  #Director.create( firstname: "Gabriel", lastname: "Mañana", email: "gmañanan@unal.edu.co", phone: "3132821290", identification: 79499271)
  #Director.create( firstname: "Jairo", lastname: "Aponte", email: "japontev@unal.edu.co", phone: "3144321212", identification: 74876342)
 
-Student.destroy_all
-Administrator.destroy_all
+
+
 
 Feedback.destroy_all
 FileGradework.destroy_all
-JuriesGradeworks.destroy_all
-DirectorsGradework.destroy_all
 
-
+User.destroy_all
 Gradework.destroy_all
-Director.destroy_all
-Jury.destroy_all
+
+status = ['sin calificar','calificando','calificado']
+roles = ['Student', 'Administator', 'Jury', 'Teacher']
 
 
+4.times do |index|
+  Role.create!(name: roles[index],
+               description: roles[index]
+  )
+end
 
-
-
-
-
+p "Created #{Role.count} Roles"
 
 100.times do |index|
-  Student.create!(firstname: Faker::Name.first_name,
+  User.create!(firstname: Faker::Name.first_name,
                 lastname: Faker::Name.last_name,
                 email: Faker::Internet.free_email,
-                phone: Faker::Number.number(10),
-  				identification: Faker::Number.number(7))
+                phone: Faker::Number.number(7),
+                identification: Faker::Number.number(7)
+  )
+
 end
 
-p "Created #{Student.count} Students"
-
-
- 
-100.times do |index|
-  Director.create!(firstname: Faker::Name.first_name,
-                lastname: Faker::Name.last_name,
-                email: Faker::Internet.free_email,
-                phone: Faker::Number.number(10),
-  				identification: Faker::Number.number(7))
-end
-
-p "Created #{Director.count} Directors"
-
-
- 
-100.times do |index|
-  Administrator.create!(firstname: Faker::Name.first_name,
-                lastname: Faker::Name.last_name,
-                email: Faker::Internet.free_email,
-                phone: Faker::Number.number(10),
-  				identification: Faker::Number.number(7))
-end
-
-p "Created #{Administrator.count} Administrators"
-
-100.times do |index|
-  Jury.create!(firstname: Faker::Name.first_name,
-                        lastname: Faker::Name.last_name,
-                        email: Faker::Internet.free_email,
-                        phone: Faker::Number.number(10),
-                        identification: Faker::Number.number(7))
-end
-
-p "Created #{Jury.count} Juries"
+p "Created #{User.count} Users"
 
 
 
@@ -86,12 +55,12 @@ p "Created #{Jury.count} Juries"
     Gradework.create!(
         name: Faker::StarWars.character,
         description: Faker::StarWars.wookie_sentence,
-        status: Faker::Pokemon.name,
         delivery_date: Faker::Date.between_except(1.year.ago, 1.year.from_now, Date.today),
         begin_date: Faker::Date.between_except(1.year.ago, 1.year.from_now, Date.today),
         hour: Faker::Time.between(DateTime.now - 1, DateTime.now),
         locale: Faker::Address.street_address,
-        semester: Faker::Number.between(1, 10)
+        semester: Faker::Number.between(1, 10),
+        status: status[Faker::Number.between(0, 2)]
     )
 
 end
@@ -100,10 +69,10 @@ p "Created #{Gradework.count} Gradeworks"
 
 100.times do |index|
   Feedback.create!(
-               director_id: Director.ids.sample,
+               user_id: User.ids.sample,
                gradework_id: Gradework.ids.sample,
                score: Faker::Number.between(1, 5),
-               anotation: Faker::Lorem.paragraph)
+               anotations: Faker::Lorem.paragraph)
 end
 
 p "Created #{Feedback.count} Feedbacks"
@@ -115,26 +84,27 @@ p "Created #{Feedback.count} Feedbacks"
       path: Faker::File.file_name('path/to'),
       description: Faker::Lorem.paragraph,
       size: Faker::Number.between(1, 10),
-      gradework_id: Gradework.ids.sample,
+      gradework_id: Gradework.ids.sample
   )
 end
 
 p "Created #{FileGradework.count} FileGradeworks"
 
+
 100.times do |index|
-  DirectorsGradework.create!(
+  GradeworkUser.create!(
       gradework_id: Gradework.ids.sample,
-      director_id: Director.ids.sample
+      user_id: User.ids.sample
   )
 end
 
-p "Created #{DirectorsGradework.count} DirectorsGradeworks"
+p "Created #{GradeworkUser.count} GradeworkUser"
 
 100.times do |index|
-  JuriesGradeworks.create!(
-      gradework_id: Gradework.ids.sample,
-      jury_id: Jury.ids.sample
+  RoleUser.create!(
+      role_id: Role.ids.sample,
+      user_id: User.ids.sample
   )
 end
 
-p "Created #{JuriesGradeworks.count} JuriesGradeworks"
+p "Created #{RoleUser.count} RoleUser"

@@ -1,0 +1,27 @@
+<%= form_for(gradework_user) do |f| %>
+  <% if gradework_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gradework_user.errors.count, "error") %> prohibited this gradework_user from being saved:</h2>
+
+      <ul>
+      <% gradework_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :gradework %>
+    <%= f.text_field :gradework %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user %>
+    <%= f.text_field :user %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

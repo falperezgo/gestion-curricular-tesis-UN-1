@@ -9,7 +9,7 @@
       <th>Path</th>
       <th>Description</th>
       <th>Size</th>
-      <th>Gradeworks</th>
+      <th>Gradework</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,7 +20,8 @@
         <td><%= file_gradework.name %></td>
         <td><%= file_gradework.path %></td>
         <td><%= file_gradework.description %></td>
-        <td><%= file_gradework.size %></td>        
+        <td><%= file_gradework.size %></td>
+        <td><%= file_gradework.gradework %></td>
         <td><%= link_to 'Show', file_gradework %></td>
         <td><%= link_to 'Edit', edit_file_gradework_path(file_gradework) %></td>
         <td><%= link_to 'Destroy', file_gradework, method: :delete, data: { confirm: 'Are you sure?' } %></td>

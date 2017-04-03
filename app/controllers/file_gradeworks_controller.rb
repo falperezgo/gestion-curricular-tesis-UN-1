@@ -69,6 +69,6 @@ class FileGradeworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def file_gradework_params
-      params.require(:file_gradework).permit(:name, :path, :description, :size, :Gradeworks_id)
+      params.require(:file_gradework).permit(:name, :path, :description, :size, :gradework)
     end
 end

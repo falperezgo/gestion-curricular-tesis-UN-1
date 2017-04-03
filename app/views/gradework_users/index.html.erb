@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gradework Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gradework</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gradework_users.each do |gradework_user| %>
+      <tr>
+        <td><%= gradework_user.gradework %></td>
+        <td><%= gradework_user.user %></td>
+        <td><%= link_to 'Show', gradework_user %></td>
+        <td><%= link_to 'Edit', edit_gradework_user_path(gradework_user) %></td>
+        <td><%= link_to 'Destroy', gradework_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gradework User', new_gradework_user_path %>
