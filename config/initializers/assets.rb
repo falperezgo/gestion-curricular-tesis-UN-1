@@ -9,3 +9,18 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( layout/base.css )
+Rails.application.config.assets.precompile += %w( layout/phone.css )
+Rails.application.config.assets.precompile += %w( layout/printer.css )
+Rails.application.config.assets.precompile += %w( layout/reset.css )
+Rails.application.config.assets.precompile += %w( layout/small.css )
+Rails.application.config.assets.precompile += %w( layout/tablet.css )
+Rails.application.config.assets.precompile += %w( layout/unal.css )
+
+Rails.application.config.assets.precompile += %w( layout/html5shiv.js )
+Rails.application.config.assets.precompile += %w( layout/matchmedia.addListener.js )
+Rails.application.config.assets.precompile += %w( layout/matchmedia.polyfill.js )
+Rails.application.config.assets.precompile += %w( layout/respond.js )
+Rails.application.config.assets.precompile += %w( layout/unal.js )
+
+

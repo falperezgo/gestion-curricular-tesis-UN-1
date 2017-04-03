@@ -1,46 +1,77 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$primary-blue: #0E84B1;
 
-$font-stack:    Verdana;
-$primary-color: #BCBCBC;
-$secondary-color: #666;
-$normal-text-color: #000000;
-
-body {
-  font: 100% $font-stack;
-  color: $normal-text-color !important;
-  background-color: $primary-color !important;
-}
 
 .button{
-	width: 120px;
-	height: 30px;
-	background-color: $secondary-color;
-	color: $primary-color;
-	border: 0px solid;
-	border-radius: 10px;
-	font-size: 18px;
+    width: 120px;
+    height: 30px;
+    border: 0px solid;
+    border-radius: 10px;
+    font-size: 18px;
 }
 
 .home-button{
-	@extend .button;
-	text-align: center;
-	margin-top: 30px;
+    @extend .button;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .bottom-gap{
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .content-temp{
-	margin-top: 100px;
+    margin-top: 100px;
 }
 
-.link-info{
-	display: block;
+.span9{
+    border: 1px solid #000;
+    width: 935px;
 }
 
-a{
-	color: $normal-text-color !important;
+.span3{
+}
+
+.container-fluid {
+    max-width: 1200px;
+}
+
+.DIV_LOG {
+    text-align: center;
+    width: 257.4px;
+}
+
+.DIV_LogTop {
+    background-color: $primary-blue ; 
+    color: white;
+    height: 40px;
+}
+
+.LoginTitle {
+    text-align: left;
+    color: azure;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.FaiconColor {
+    color: rgb(3, 166, 239)
+}
+
+.LogOptions {
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.remember-password
+{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.home-title
+{
+    margin-bottom: 20px;
 }

@@ -1,43 +1,47 @@
-<div class="container">
 
-			<div style="padding: 10px; float: right; width: 30%; text-align: justify;">
+<body>
 
-			 	<h2>Horario de atención
-			 	</h2>
-			 	<p>Recepción telefónica Lunes a viernes, de 8 am a 5 pm.</p>
-			 	<p>Recepción digital Lunes a domingo, las 24 horas (diligenciando el formulario de buzón general).
-			 	</p>
-			 	<h2>Telefonos</h2>
-			 	<p>32046</p>
-			</div>
+<div class="container-fluid contenedorprincipal">
+	<div class="breadcrumb-class">
+		Está en:&nbsp;
+		<a href="../" target="_self" title="Inicio">Inicio</a>&nbsp;&nbsp;/&nbsp;&nbsp;<b>Contáctenos</b></div>
+		<br>
 
-			 <div class="content">
-			 	<h1>Información de contacto
-			 	</h1>
+	<div class="row">
+<!-- Formulario de contacto -->
+		<div class="col-xs-12 col-sm-8 col-md-8 border-contact-form" >
+			<h1>Información de contacto
+ 			</h1>
 
-			 	Asunto* <br/>
-			 	<input type="text" name="casunto" value="" />
-			 	<br/>
+			<label class="labelform" for="asunto">Asunto*</label>
+			<input class="cajatexto margen-input" type="text" placeholder="Asunto" name="cAsunto" value="" required="required" />
 
-			 	Escriba sus comentarios* <br/>
-			 	<input type="text" name="ccomentarios" style="width:400px; height:50px" value="" />
-			 	<br/>
+			<label class="labelform" for="comentarios">Escriba sus comentarios*</label>
+    	<textarea class="cajatexto margen-input" type="text" placeholder="Comentarios.."  name="cComentarios"  style="width:350px; height:100px; text-size-adjust:100%" required="required"></textarea>
 
-			 	Nombre* <br/>
-			 	<input type="text" name="cnombre" value="" />
-			 	<br/>
+			<label class="labelform" for="nombre">Nombre*</label>
+    	<input class="cajatexto margen-input" type="text" placeholder="Nombre" name="cNombre" value="" required="required"/>
 
-			 	Correo electronico* <br/>
-			 	<input type="email" name="ccorreo" value="" />
-			 	<br/>
+			<label class="labelform" for="correo">Correo electronico*</label>
+    	<input class="cajatexto margen-input" type="email" placeholder="Email" name="cCorreo" value="" required="required"/>
 
-			 	Telefono <br/>
-			 	<input type="tel" name="ctelefono" value="" />
-			 	<br/>
 
-			 	<br/>
-			 	<input type="button" name="enviar" value="Enviar" />
-			 	</div>
+    	<label class="labelform" for="telefono">Telefono</label>
+    	<input class="cajatexto margen-input" type="tel" placeholder="Telefono" name="cTelefono" value="" />
 
-	 </div>
+    	<a class="btn btn-primary margen-boton" name="enviar" href="#">Enviar</a>
+		</div>
 
+		<div class="col-xs-12 col-sm-4 col-md-4 divisioncontact" >
+    	<h2>Horario de atención</h2>
+    	<br>
+    	<p>Recepción telefónica Lunes a viernes, de 8 am a 5 pm.</p>
+    	<p>Recepción digital Lunes a domingo, las 24 horas (diligenciando el formulario de buzón general).
+    	</p>
+    	<br>
+    	<h2>Telefonos:</h2>
+    	<p>-3204654876</p>
+    </div>
+	</div>
+</div>
+</body>
