@@ -18,6 +18,10 @@ class User < ApplicationRecord
     find_by_id(id)
   end
 
+  def self.users_by_firtsname(firstname)
+    find_by_firstname(firstname)
+  end
+
  def self.users_by_email(email)
  	find_by_email(email)
   end
