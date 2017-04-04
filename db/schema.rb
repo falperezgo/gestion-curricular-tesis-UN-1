@@ -59,20 +59,20 @@ ActiveRecord::Schema.define(version: 20170402175216) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "role_users", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "role_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["role_id"], name: "index_role_users_on_role_id", using: :btree
-    t.index ["user_id"], name: "index_role_users_on_user_id", using: :btree
-  end
-
   create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "roles_users", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_roles_users_on_role_id", using: :btree
+    t.index ["user_id"], name: "index_roles_users_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,6 +90,6 @@ ActiveRecord::Schema.define(version: 20170402175216) do
   add_foreign_key "file_gradeworks", "gradeworks"
   add_foreign_key "gradework_users", "gradeworks"
   add_foreign_key "gradework_users", "users"
-  add_foreign_key "role_users", "roles"
-  add_foreign_key "role_users", "users"
+  add_foreign_key "roles_users", "roles"
+  add_foreign_key "roles_users", "users"
 end
