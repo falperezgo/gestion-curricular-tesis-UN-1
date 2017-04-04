@@ -41,20 +41,20 @@ class Gradework < ApplicationRecord
     find_by_name(name)
   end
 
-  def self.gradeworks_student(id)
-    includes(users: [:roles]).where({name: "Student"})
+  def self.gradeworks_student()
+    includes(users: [:roles]).where(roles: {name: "Administator"})
   end
 
-  def self.gradeworks_administrator(id)
-    includes(users: [:roles]).where({name: "Administator"})
+  def self.gradeworks_administrator()
+    includes(users: [:roles]).where(roles: {name: "Administator"})
   end
 
-  def self.gradeworks_director(id)
-    includes(users: [:roles]).where({name: "Teacher"})
+  def self.gradeworks_director()
+    includes(users: [:roles]).where(roles: {name: "Teacher"})
   end
 
-  def self.gradeworks_jury(id)
-    includes(users: [:roles]).where({name: "Jury"})
+  def self.gradeworks_jury()
+    includes(users: [:roles]).where(roles: {name: "Jury"})
   end
 
 end
