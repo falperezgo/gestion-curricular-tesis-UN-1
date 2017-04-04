@@ -37,15 +37,6 @@ ActiveRecord::Schema.define(version: 20170402175216) do
     t.index ["gradework_id"], name: "index_file_gradeworks_on_gradework_id", using: :btree
   end
 
-  create_table "gradework_users", force: :cascade do |t|
-    t.integer  "gradework_id"
-    t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["gradework_id"], name: "index_gradework_users_on_gradework_id", using: :btree
-    t.index ["user_id"], name: "index_gradework_users_on_user_id", using: :btree
-  end
-
   create_table "gradeworks", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -57,6 +48,15 @@ ActiveRecord::Schema.define(version: 20170402175216) do
     t.string   "semester"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "gradeworks_users", force: :cascade do |t|
+    t.integer  "gradework_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["gradework_id"], name: "index_gradeworks_users_on_gradework_id", using: :btree
+    t.index ["user_id"], name: "index_gradeworks_users_on_user_id", using: :btree
   end
 
   create_table "roles", force: :cascade do |t|
@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(version: 20170402175216) do
   add_foreign_key "feedbacks", "gradeworks"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "file_gradeworks", "gradeworks"
-  add_foreign_key "gradework_users", "gradeworks"
-  add_foreign_key "gradework_users", "users"
+  add_foreign_key "gradeworks_users", "gradeworks"
+  add_foreign_key "gradeworks_users", "users"
   add_foreign_key "roles_users", "roles"
   add_foreign_key "roles_users", "users"
 end

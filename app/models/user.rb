@@ -27,19 +27,38 @@ class User < ApplicationRecord
   end
 
   def self.users_jury()
-    joins(:roles).where({ roles: { name: "Jury" } })
+    joins(:roles).select("users.firstname, users.lastname, users.id")
+    .where({ roles: { name: "Jury" } })
   end
 
   def self.users_student()
-    joins(:roles).where({ roles: { name: "Student" } })
+    joins(:roles).select("users.firstname, users.lastname, users.id")
+    .where({ roles: { name: "Student" } })
   end
 
   def self.users_director()
-    joins(:roles).where({ roles: { name: "Teacher" } })
+    joins(:roles).select("users.firstname, users.lastname, users.id")
+    .where({ roles: { name: "Teacher" } })
   end
 
   def self.users_administrator()
-    joins(:roles).where({ roles: { name: "Administator" } })
+    joins(:roles).select("users.firstname, users.lastname, users.id")
+    .where({ roles: { name: "Administator" } })
+  end
+
+  def self.users_gradework_qualified()
+    joins(:gradeworks).select("users.firstname, users.id")
+    .where({ gradeworks: { status: "calificado" } })
+  end
+
+  def self.users_gradework_unrated()
+    joins(:gradeworks).select("users.firstname, users.id")
+    .where({ gradeworks: { status: "sin calificar" } })
+  end
+
+  def self.users_gradework_qualifying()
+    joins(:gradeworks).select("users.firstname, users.id")
+    .where({ gradeworks: { status: "calificando" } })
   end
 
 

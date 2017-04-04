@@ -21,9 +21,11 @@
 
 Feedback.destroy_all
 FileGradework.destroy_all
-
+Role.destroy_all
 User.destroy_all
 Gradework.destroy_all
+RoleUser.destroy_all
+GradeworkUser.destroy_all
 
 status = ['sin calificar','calificando','calificado']
 roles = ['Student', 'Administator', 'Jury', 'Teacher']
