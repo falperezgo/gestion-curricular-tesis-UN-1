@@ -28,7 +28,7 @@ class GradeworksController < ApplicationController
 
     respond_to do |format|
       if @gradework.save
-        format.html { redirect_to @gradework, notice: 'Gradework was successfully created.' }
+        format.html { redirect_to @gradework, notice: 'La tesis se creó correctamente' }
         format.json { render :show, status: :created, location: @gradework }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class GradeworksController < ApplicationController
   def update
     respond_to do |format|
       if @gradework.update(gradework_params)
-        format.html { redirect_to @gradework, notice: 'Gradework was successfully updated.' }
+        format.html { redirect_to @gradework, notice: 'La tesis se modificó correctamente' }
         format.json { render :show, status: :ok, location: @gradework }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class GradeworksController < ApplicationController
   def destroy
     @gradework.destroy
     respond_to do |format|
-      format.html { redirect_to gradeworks_url, notice: 'Gradework was successfully destroyed.' }
+      format.html { redirect_to gradeworks_url, notice: 'La tesis se eliminó correctamente' }
       format.json { head :no_content }
     end
   end

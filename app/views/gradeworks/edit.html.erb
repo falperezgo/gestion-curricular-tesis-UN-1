@@ -1,6 +1,18 @@
-<h1>Editing Gradework</h1>
+<div class="container-fluid contenedorprincipal">
+	<section role="main-content">
+	    <div class="breadcrumb-class">
+	        Está en:&nbsp;
+	        <a href="#" target="_self" title="Inicio"><b>Inicio</b></a>
+	    </div>
+	    <br>
+		<div class="col-md-6 col-md-offset-3 form-container-gradework">
+			<h1>Editar Tesis</h1>
 
-<%= render 'form', gradework: @gradework %>
-
-<%= link_to 'Show', @gradework %> |
-<%= link_to 'Back', gradeworks_path %>
+			<%= render 'form', gradework: @gradework, button_name: "Editar" %>
+			<div class="text-center">
+				<%= link_to 'Ver', @gradework %> |
+				<%= link_to 'Atras', gradeworks_path %>
+			</div>
+		</div>
+	</section>
+</div>
