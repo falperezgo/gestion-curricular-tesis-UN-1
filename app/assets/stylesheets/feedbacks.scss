@@ -21,6 +21,11 @@ h1{
     margin-top: 15px;
 }
 
+.form-class-show{
+	@extend .form-class;
+	width: 700px;
+	padding: 20px;
+}
 
 .full-field{
 	padding: 20px;
@@ -39,7 +44,6 @@ h1{
 .feed-input{
     width: 300px;
 }
-
 
 .feed-button{
     width: 120px;

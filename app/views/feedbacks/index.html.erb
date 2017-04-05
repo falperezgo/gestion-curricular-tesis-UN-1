@@ -8,37 +8,41 @@
 
         <p id="notice"><%= notice %></p>
         <br></br>
-        <h1>Feedbacks</h1>
+        <h1>Retroalimentación</h1>
+        <br></br>
+        <div class="bs-example">
+          <div class="table-responsive"> 
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th>Anotaciones</th>
+                  <th>Puntaje</th>
+                  <th>Trabajo de Grado</th>
+                  <th>Usuario</th>
+                  <th colspan="3">Accion</th>
+                </tr>
+              </thead>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Anotations</th>
-              <th>Score</th>
-              <th>Gradework</th>
-              <th>User</th>
-              <th colspan="3"></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @feedbacks.each do |feedback| %>
-              <tr>
-                <td><%= feedback.anotations %></td>
-                <td><%= feedback.score %></td>
-                <td><%= feedback.gradework %></td>
-                <td><%= feedback.user %></td>
-                <td><%= link_to 'Show', feedback %></td>
-                <td><%= link_to 'Edit', edit_feedback_path(feedback) %></td>
-                <td><%= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+              <tbody>
+                <% @feedbacks.each do |feedback| %>
+                  <tr>
+                    <td><%= feedback.anotations %></td>
+                    <td><%= feedback.score %></td>
+                    <td><%= feedback.gradework %></td>
+                    <td><%= feedback.user %></td>
+                    <td><%= link_to 'Ver', feedback %></td>
+                    <td><%= link_to 'Editar', edit_feedback_path(feedback) %></td>
+                    <td><%= link_to 'Eliminar', feedback, method: :delete, data: { confirm: '¿Esta Seguro?' } %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table> 
+          </div>
+        </div>
 
         <br>
 
-        <%= link_to 'New Feedback', new_feedback_path %>
+        <%= link_to 'Crear Retroalimentación', new_feedback_path %>
 
 
     </section>

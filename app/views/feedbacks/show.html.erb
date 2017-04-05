@@ -5,33 +5,32 @@
             Está en:&nbsp;
             <a href="../" target="_self" title="Inicio">Inicio</a>&nbsp;&nbsp;/&nbsp;&nbsp;<b>Retroalimentación</b></div>
 
-            <div class="form-class">
-
-					<p id="notice"><%= notice %></p>
-
-					<p>
-					  <strong>Anotations:</strong>
-					  <%= @feedback.anotations %>
-					</p>
-
-					<p>
-					  <strong>Score:</strong>
-					  <%= @feedback.score %>
-					</p>
-
-					<p>
-					  <strong>Gradework:</strong>
-					  <%= @feedback.gradework %>
-					</p>
-
-					<p>
-					  <strong>User:</strong>
-					  <%= @feedback.user %>
-					</p>
-
-					<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
-					<%= link_to 'Back', feedbacks_path %>
-
+            <div class="form-class-show">
+            <p id="notice"><%= notice %></p>
+            		<div class="bs-example">
+    					<div class="table-responsive"> 
+        				<table class="table table-bordered">
+            				<thead>
+                				<tr>
+                					<th>Anotaciones</th>
+				                    <th>Puntaje</th>
+				                    <th>Trabajo de Grado</th>
+				                    <th>Usuario</th>
+				                </tr>
+				            </thead>
+				            <tbody>
+				            	<tr>
+				                    <td><%= @feedback.anotations %></td>
+				                    <td><%= @feedback.score %></td>
+				                    <td><%= @feedback.gradework %></td>
+				                    <td><%= @feedback.user %></td>
+				                </tr>
+				        	</tbody>
+				        </table>	
+						</div>
+					</div>
+					<%= link_to 'Editar', edit_feedback_path(@feedback) %> |
+					<%= link_to 'Atras', feedbacks_path %>
 			</div>
 
 	</section>
