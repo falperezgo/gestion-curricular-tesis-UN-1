@@ -32,9 +32,9 @@ class FileGradework < ApplicationRecord
     
   
   
- # def self.files_student_name(identification)
-    # includes(gradework: [:users])
-	# .where(users: {identification: identification})
-  # end
+ def self.files_student_name(identification)
+     includes(gradework: [:users])
+	 .where(users: {identification: identification})
+   end
 
 end

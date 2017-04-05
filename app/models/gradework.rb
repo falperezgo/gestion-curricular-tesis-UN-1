@@ -41,6 +41,11 @@ class Gradework < ApplicationRecord
     find_by_name(name)
   end
 
+  def self.gradeworks_by_roles(role)
+    includes(users: [:roles])
+        .where(roles: {name: role})
+  end
+
   def self.gradeworks_student()
     includes(users: [:roles])
 	.where(roles: {name: "Administator"})

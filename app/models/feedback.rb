@@ -45,7 +45,13 @@ class Feedback < ApplicationRecord
 	# includes(user: [:roles])
 	# .where(user: {id: id})
   # end
-  
+
+
+  def self.feedbacks_by_role(type)
+    includes(user: [:roles])
+        .where(roles: {name:type })
+  end
+
   def self.feedbacks_director()
 	includes(user: [:roles])
 	.where(roles: {name: "Teacher"})
@@ -60,6 +66,6 @@ class Feedback < ApplicationRecord
 	includes(user: [:roles])
 	.where(roles: {name: "Student"})
   end
-  
+
   
 end
