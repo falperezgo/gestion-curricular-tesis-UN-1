@@ -1,24 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div id="page" class="container-fluid contenedorprincipal" >
+    <section role="main-content">       
 
-<p>
-  <strong>Anotations:</strong>
-  <%= @feedback.anotations %>
-</p>
+        <div class="breadcrumb-class">
+            Está en:&nbsp;
+            <a href="../" target="_self" title="Inicio">Inicio</a>&nbsp;&nbsp;/&nbsp;&nbsp;<b>Retroalimentación</b></div>
 
-<p>
-  <strong>Score:</strong>
-  <%= @feedback.score %>
-</p>
+            <div class="form-class">
 
-<p>
-  <strong>Gradework:</strong>
-  <%= @feedback.gradework %>
-</p>
+					<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @feedback.user %>
-</p>
+					<p>
+					  <strong>Anotations:</strong>
+					  <%= @feedback.anotations %>
+					</p>
 
-<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
-<%= link_to 'Back', feedbacks_path %>
+					<p>
+					  <strong>Score:</strong>
+					  <%= @feedback.score %>
+					</p>
+
+					<p>
+					  <strong>Gradework:</strong>
+					  <%= @feedback.gradework %>
+					</p>
+
+					<p>
+					  <strong>User:</strong>
+					  <%= @feedback.user %>
+					</p>
+
+					<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
+					<%= link_to 'Back', feedbacks_path %>
+
+			</div>
+
+	</section>
+</div>
+
