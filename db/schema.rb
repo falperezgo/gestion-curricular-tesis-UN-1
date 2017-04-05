@@ -15,6 +15,35 @@ ActiveRecord::Schema.define(version: 20170402175216) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "administrators", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "identification"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "directors", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "identification"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "directors_gradeworks", force: :cascade do |t|
+    t.integer  "director_id"
+    t.integer  "gradework_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["director_id"], name: "index_directors_gradeworks_on_director_id", using: :btree
+    t.index ["gradework_id"], name: "index_directors_gradeworks_on_gradework_id", using: :btree
+  end
+
   create_table "feedbacks", force: :cascade do |t|
     t.text     "anotations"
     t.integer  "score"
@@ -73,6 +102,7 @@ ActiveRecord::Schema.define(version: 20170402175216) do
     t.datetime "updated_at", null: false
     t.index ["role_id"], name: "index_roles_users_on_role_id", using: :btree
     t.index ["user_id"], name: "index_roles_users_on_user_id", using: :btree
+
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,6 +115,7 @@ ActiveRecord::Schema.define(version: 20170402175216) do
     t.datetime "updated_at",     null: false
   end
 
+  add_foreign_key "directors_gradeworks", "directors"
   add_foreign_key "feedbacks", "gradeworks"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "file_gradeworks", "gradeworks"

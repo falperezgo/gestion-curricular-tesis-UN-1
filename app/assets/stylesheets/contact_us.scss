@@ -1,9 +1,6 @@
-@charset "utf-8";
 
 .divisioncontact{
 	padding: 10px;
-	float: right;
-	width: 30%;
 	text-align:
 	justify;
 }
@@ -11,7 +8,7 @@
 	margin: 10px 0 0 20px;
 }
 .margen-boton{
-	margin: 15px 0 0 20px;
+	margin: 15px 0 25px 20px;
 }
 .margen-input{
 	margin: 0 0 0 20px;
@@ -19,6 +16,7 @@
 
 .border-contact-form
 {
-	border-right: 1px solid;
+	border-right: 1px solid #adadad;
 	padding-left: 35px !important;
+	margin-bottom: 25px;
 }

@@ -23,7 +23,6 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-
 development:
   #<<: *default
   database: GestionMaestria_development
@@ -32,7 +31,8 @@ development:
   database: GestionMaestria_development
   pool: 5
   username: postgres
-  password: 123
+  password: 12345
+
 
 test:
   #<<: *default
@@ -40,7 +40,8 @@ test:
   encoding: utf8
   database: GestionMaestria_test
   username: postgres
-  password: 123
+  password: 12345
+
 
 #
 production:
@@ -48,5 +49,5 @@ production:
   encoding: utf8
   database: GestionMaestria_development
   pool: 5
-  username:
-  password:
+  username: 
+  password: 
