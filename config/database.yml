@@ -33,6 +33,7 @@ development:
   username: postgres
   password: 12345
 
+
 test:
   #<<: *default
   adapter: postgresql
@@ -40,6 +41,7 @@ test:
   database: GestionMaestria_test
   username: postgres
   password: 12345
+
 
 #
 production:
