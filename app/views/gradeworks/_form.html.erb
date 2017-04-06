@@ -26,6 +26,24 @@
       <%= f.text_field :status, class: 'form-gradework' %>
     </div>
 
+    <!-- Aqui va para llamar la lista de estudiantes-->
+    <%= f.label :status, 'Estudiante', class: 'label-gradework' %>
+    <div class="field">
+      <%= f.select :status, class: 'form-gradework' %>
+    </div>
+
+    <!-- Aqui va para llamar la lista de Directores-->
+    <%= f.label :status, 'Director', class: 'label-gradework' %>
+    <div class="field">
+      <%= f.select :status, class: 'form-gradework' %>
+    </div>
+
+    <!-- Aqui va para llamar la lista de Jurados-->
+    <%= f.label :status, 'Jurado', class: 'label-gradework' %>
+    <div class="field">
+      <%= f.select :status, class: 'form-gradework' %>
+    </div>
+
     <%= f.label :delivery_date, 'Fecha de envio', class: 'label-gradework' %>
     <div class="field">
       <%= f.date_select :delivery_date, class: 'form-gradework' %>
