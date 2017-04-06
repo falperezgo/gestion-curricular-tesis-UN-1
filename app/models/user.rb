@@ -4,16 +4,13 @@ class User < ApplicationRecord
   has_and_belongs_to_many :roles
   accepts_nested_attributes_for :roles
 
-  private
-  def user_params
-    params.require(:firstname).permit(:roles => [:id,:name])
-  end
+
 
   validates :firstname, :lastname, :phone, presence: true
   validates :email, :identification, presence: true, uniqueness: true
 
   default_scope {order("users.firstname ASC")}
-  
+
   scope :order_by_firstname,-> (ord) {order("users.firstname #{ord}")}
   scope :order_by_lastname, -> (ord) {order("users.lastname #{ord}")}
   scope :order_by_email, -> (ord) {order("users.email #{ord}")}

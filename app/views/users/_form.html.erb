@@ -38,8 +38,9 @@
 
     <div class="field">
       <%= f.label :roleo %>
-      <%= f.collection_select :roles, Role.order(:name),:id,:name, include_blank: true %>
+    <%= select_tag(:rol, options_from_collection_for_select(@roles ,:id, :name, {multiple: true})) %>
     </div>
+
 
 
 
