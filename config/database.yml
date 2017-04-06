@@ -19,15 +19,10 @@ default: &default
   password: "753159"
   adapter: postgresql
   encoding: UTF8
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-#=======
-#>>>>>>> feature/data-model
 development:
-  #<<: *default
-  #database: GestionMaestria_development
+  database: GestionMaestria_development
   adapter: postgresql
   encoding: utf8
   database: GestionMaestria_development
