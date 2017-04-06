@@ -1,76 +1,22 @@
 <div id="page" class="container-fluid contenedorprincipal" >
-	<section role="main-content">
-	
-		<div class="breadcrumb-class">
+    <section role="main-content">       
+
+        <div class="breadcrumb-class">
 			Está en:&nbsp;
 		   <a href="#" target="_self" title="Usario"><b>Crear Usario</b></a>
 		</div>
-		
-		<br>
-		
-		
-		<div class="centro container">
-		
-			<h1>Crear Usuario
- 			</h1>
 
-			<div class="mar">
-			<label class="labelform fontSizeU" for="nombre">Nombre*</label>
-			<input class="inputLeft" type="text" placeholder="" name="uNombre" value="" required="required" /><br>
-			</div>
+        <div class="form-class">
 
-			<div class="mar">
-			<label class="labelform fontSizeU" for="apellidos">Apellido(s)*</label>
-			<input class="inputLeft" type="text" placeholder=""  name="uApellidos"  required="required"></textarea><br>
-			</div>
-			
-			<div class="mar">
-			<label class="labelform fontSizeU" for="roll">Roll*</label>
-			<select class="inputLeft" name="uRoll">
-			   <option value="administrator">Administrador</option> 
-			   <option value="student">Estudiante</option> 
-			   <option value="jury">Jurado</option>
-			   <option value="director">Director</option> 
-			</select>
-			</div>
+			<h1>Crear Usuario</h1>
 
-			<div class="mar">
-			<label class="labelform fontSizeU" for="correo">Correo electronico*</label>
-			<input class="inputLeft" type="email" placeholder="@unal.edu.co" name="uCorreo" value="" required="required"/><br>
-			</div>
+			<%= render 'form', user: @user, button_name: "Crear" %>
 
-			<div class="mar">
-			<label class="labelform fontSizeU" for="codigo">Código*</label>
-			<input class="inputLeft" type="text" placeholder="" name="uCodigo" value="" /><br>
-			</div>
-
-			<div class="mar">
-			<label class="labelform fontSizeU" for="ciudad">Ciudad</label>
-			<input class="inputLeft" type="text" placeholder="" name="uCiudad" value="" /><br>
-			</div>
-			
-			<div class="mar">
-			<label class="labelform fontSizeU" for="pais">Seleccione su país</label>
-			<select class="inputLeft" name="uPais">
-			   <option value="1">Colombia</option> 
-			   <option value="2">A</option> 
-			   <option value="3">B</option>
-			   <option value="10">C</option> 
-			   <option value="11">D</option> 
-			   <option value="12">E</option> 
-			</select>
-			</div>
-			<br><br><br><br>
-			<!-- <input class="cajatexto margen-input" type="text" placeholder="" name="upais" value="" /> -->
-
-			<a class="btn btn-primary bottomright" name="crear" href="#" >Crear</a>
-		<!-- </div> -->
-
-		<!-- <%= render 'form', user: @user %> -->
-
-		<!-- <%= link_to 'Back', users_path %> -->
+			<center><%= link_to 'Atras', users_path %></center>
 
 		</div>
-		
+
+
+
 	</section>
 </div>

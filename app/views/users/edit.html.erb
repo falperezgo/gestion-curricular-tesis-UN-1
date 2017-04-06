@@ -1,6 +1,19 @@
-<h1>Editing User</h1>
+<div id="page" class="container-fluid contenedorprincipal" >
+    <section role="main-content">       
 
-<%= render 'form', user: @user %>
+        <div class="breadcrumb-class">
+            Está en:&nbsp;
+            <a href="../" target="_self" title="Usuario">Usuario</a>&nbsp;&nbsp;/&nbsp;&nbsp;<b>Editar</b></div>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+            <div class="form-class">
+				<h1>Editando Usuario</h1>
+
+				<%= render 'form', user: @user, button_name: "Aceptar"  %>
+				<center>
+				<%= link_to 'Ver', @user %> |
+				<%= link_to 'Atras', users_path %>
+				</center>
+			</div>
+
+	</section>
+</div>
