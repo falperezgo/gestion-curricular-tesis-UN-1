@@ -38,7 +38,7 @@
 
     <div class="field">
       <%= f.label :roleo %>
-    <%= select_tag(:rol, options_from_collection_for_select(@roles ,:id, :name, {multiple: true})) %>
+    <%= select_tag(:rol, options_from_collection_for_select(@roles ,:id, :name), multiple: true) %>
     </div>
 
 
