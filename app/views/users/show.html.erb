@@ -25,5 +25,10 @@
   <%= @user.phone %>
 </p>
 
+<p>
+  <strong>Role:</strong>
+  <%= @user.role_ids %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
