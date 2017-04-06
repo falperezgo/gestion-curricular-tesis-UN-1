@@ -36,6 +36,13 @@
     <%= f.number_field :phone %>
   </div>
 
+    <div class="field">
+      <%= f.label :roleo %>
+      <%= f.collection_select :roles, Role.order(:name),:id,:name, include_blank: true %>
+    </div>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
