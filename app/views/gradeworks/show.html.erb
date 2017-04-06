@@ -40,5 +40,7 @@
   <%= @gradework.semester %>
 </p>
 
+<%= image_tag @gradework.file.url %>
+
 <%= link_to 'Edit', edit_gradework_path(@gradework) %> |
 <%= link_to 'Back', gradeworks_path %>

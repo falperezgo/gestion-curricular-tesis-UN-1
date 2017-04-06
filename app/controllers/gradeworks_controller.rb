@@ -69,6 +69,6 @@ class GradeworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gradework_params
-      params.require(:gradework).permit(:name, :description, :status, :delivery_date, :begin_date, :hour, :locale, :semester)
+      params.require(:gradework).permit(:name, :description, :status, :delivery_date, :begin_date, :hour, :locale, :semester, :file)
     end
 end

@@ -1,6 +1,7 @@
 <h1>Editing Gradework</h1>
 
 <%= render 'form', gradework: @gradework %>
-
+<p>Archivos actuales: </p>
+<%= image_tag @gradework.file.url %>
 <%= link_to 'Show', @gradework %> |
 <%= link_to 'Back', gradeworks_path %>
