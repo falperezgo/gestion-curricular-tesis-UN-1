@@ -1,44 +1,59 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid contenedorprincipal">
+  <section role="main-content">
+      <div class="breadcrumb-class">
+          Está en:&nbsp;
+          <a href="#" target="_self" title="Inicio"><b>Inicio</b></a>
+      </div>
+      <br>
+    <div class="col-md-6 col-md-offset-3 form-container-gradework">
+      <h1>Tesis</h1>
+      <p id="notice"><%= notice %></p>
+      <div class="margin-show-gradework">
+        <p>
+          <strong class="margin-field-show">Nombre:</strong>
+          <%= @gradework.name %>
+        </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @gradework.name %>
-</p>
+        <p>
+          <strong class="margin-field-show">Descripción:</strong>
+          <%= @gradework.description %>
+        </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @gradework.description %>
-</p>
+        <p>
+          <strong class="margin-field-show">Estado:</strong>
+          <%= @gradework.status %>
+        </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @gradework.status %>
-</p>
+        <p>
+          <strong class="margin-field-show">Delivery date:</strong>
+          <%= @gradework.delivery_date %>
+        </p>
 
-<p>
-  <strong>Delivery date:</strong>
-  <%= @gradework.delivery_date %>
-</p>
+        <p>
+          <strong class="margin-field-show">Begin date:</strong>
+          <%= @gradework.begin_date %>
+        </p>
 
-<p>
-  <strong>Begin date:</strong>
-  <%= @gradework.begin_date %>
-</p>
+        <p>
+          <strong class="margin-field-show">Hora:</strong>
+          <%= @gradework.hour %>
+        </p>
 
-<p>
-  <strong>Hour:</strong>
-  <%= @gradework.hour %>
-</p>
+        <p>
+          <strong class="margin-field-show">Ubicación:</strong>
+          <%= @gradework.locale %>
+        </p>
 
-<p>
-  <strong>Locale:</strong>
-  <%= @gradework.locale %>
-</p>
+        <p>
+          <strong class="margin-field-show">Semestre:</strong>
+          <%= @gradework.semester %>
+        </p>
+      </div>
+      <div class="text-center">
+        <%= link_to 'Editar', edit_gradework_path(@gradework) %> |
+        <%= link_to 'Atras', gradeworks_path %>
+      </div>
+    </div>
+  </section>
+</div>
 
-<p>
-  <strong>Semester:</strong>
-  <%= @gradework.semester %>
-</p>
-
-<%= link_to 'Edit', edit_gradework_path(@gradework) %> |
-<%= link_to 'Back', gradeworks_path %>

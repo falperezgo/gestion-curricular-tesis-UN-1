@@ -1,6 +1,20 @@
-<h1>Editing Feedback</h1>
 
-<%= render 'form', feedback: @feedback %>
+<div id="page" class="container-fluid contenedorprincipal" >
+    <section role="main-content">       
 
-<%= link_to 'Show', @feedback %> |
-<%= link_to 'Back', feedbacks_path %>
+        <div class="breadcrumb-class">
+            Está en:&nbsp;
+            <a href="../" target="_self" title="Inicio">Inicio</a>&nbsp;&nbsp;/&nbsp;&nbsp;<b>Retroalimentación</b></div>
+
+            <div class="form-class">
+				<h1>Editar Retroalimentación</h1>
+
+				<%= render 'form', feedback: @feedback, button_name: "Editar" %>
+				<center>
+					<%= link_to 'Ver |', @feedback %>  
+					<%= link_to ' Atras', feedbacks_path %>
+				</center>
+			</div>
+
+	</section>
+</div>

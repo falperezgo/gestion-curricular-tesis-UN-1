@@ -2,9 +2,13 @@ class User < ApplicationRecord
 
   has_and_belongs_to_many :gradeworks
   has_and_belongs_to_many :roles
+  accepts_nested_attributes_for :roles
+
+
 
   validates :firstname, :lastname, :phone, presence: true
   validates :email, :identification, presence: true, uniqueness: true
+
   default_scope {order("users.firstname ASC")}
 
   scope :order_by_firstname,-> (ord) {order("users.firstname #{ord}")}
@@ -17,7 +21,7 @@ class User < ApplicationRecord
     find_by_id(id)
   end
 
-  def self.users_by_firstname(firstname)
+  def self.users_by_firtsname(firstname)
     find_by_firstname(firstname)
   end
 
@@ -28,7 +32,6 @@ class User < ApplicationRecord
   def self.users_by_identification(identification)
   	find_by_identification(identification)
   end
-
 
   def self.users_jury()
     joins(:roles).select("users.firstname, users.lastname, users.id")

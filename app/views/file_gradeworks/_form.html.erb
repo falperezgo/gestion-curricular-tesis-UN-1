@@ -36,6 +36,11 @@
     <%= f.text_field :gradework %>
   </div>
 
+  <div class="field">
+    <%= f.label :fileGradework %>
+    <%= f.file_field :avatars_id, :multiple => true %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
