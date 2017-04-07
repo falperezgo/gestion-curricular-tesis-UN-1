@@ -34,7 +34,11 @@
 					<td><%= user.lastname %></td>
 					<td><%= user.email %></td>
 					<td><%= user.identification %></td>
-					<td><%=  %></td>
+					<td><% user.roles.each do |role| %>
+                <div>
+                  <%= role.name %>
+                </div>
+            <% end %></td>
 					<td><%= user.phone %></td>
 					<td><%= link_to 'Ver', user %></td>
 					<td><%= link_to 'Editar', edit_user_path(user) %></td>
