@@ -4,7 +4,7 @@ class Gradework < ApplicationRecord
   has_many :filegradeworks 
   has_many :feedbacks
 
-  validates :name, :status, :delivery_date, :begin_date, :hour, :locale, :semester, presence: true
+  validates :name, :status, :begin_date, :semester, presence: true
 
   default_scope {order("gradeworks.name")}
   scope :order_by_name, -> (ord) {order("gradeworks.name #{ord}")}
