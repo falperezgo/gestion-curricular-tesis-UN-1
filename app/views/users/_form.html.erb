@@ -46,11 +46,15 @@
         <%= f.submit value: button_name , :class => 'feed-button'  %>
   </div>
 
-  
-  <!-- <center> -->
-  <!-- <div class="actions"> -->
-    <!-- <%= f.submit %> -->
-  <!-- </div> -->
-  <!-- </center> -->
-  
+    <div class="field">
+      <%= f.label :roleo %>
+    <%= select_tag(:rol, options_from_collection_for_select(@roles ,:id, :name), multiple: true) %>
+    </div>
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

@@ -66,4 +66,9 @@ class Gradework < ApplicationRecord
 	.where(roles: {name: "Jury"})
   end
 
+  #CarrierWave
+  mount_uploader :file, FileUploader
+
+  
+
 end
