@@ -48,6 +48,14 @@
           <strong class="margin-field-show">Semestre:</strong>
           <%= @gradework.semester %>
         </p>
+        <p>
+          <strong class="margin-field-show">Archivo:</strong>
+          <%= @gradework.file_identifier %>
+          <%= link_to('Open', @gradework.file.url) if @gradework.file?%>
+
+        </p>
+
+
       </div>
       <div class="text-center">
         <%= link_to 'Editar', edit_gradework_path(@gradework) %> |
@@ -56,4 +64,3 @@
     </div>
   </section>
 </div>
-

@@ -52,12 +52,16 @@
 
     <%= f.label :file, 'Archivo (Resolución)', class: 'label-gradework' %>
     <div class="field">
+      <%= @gradework.file_identifier %>
+      <br>
       <%= f.file_field :file %>
     </div>
+    <div><%= link_to 'Borrar', @gradework.remove_file! %>
+    <%= @gradework.save %> </div>
+
 
     <div class="actions text-center">
       <%= f.submit value: button_name %>
     </div>
   <% end %>
 </div>
-
