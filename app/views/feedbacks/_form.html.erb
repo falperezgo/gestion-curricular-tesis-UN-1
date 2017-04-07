@@ -10,28 +10,29 @@
       </ul>
     </div>
   <% end %>
+  <div class="full-field">
+      <%= f.label "Anotaciones" %>
+      <div class="field">      
+      <%= f.text_area :anotations, :class => 'feed-input' %>
+      </div>
 
-  <div class="field">
-    <%= f.label :anotations %>
-    <%= f.text_area :anotations %>
+      <%= f.label "Puntaje" %>
+      <div class="field">    
+        <%= f.number_field :score, :class => 'feed-input' %>
+      </div>
+
+      <%= f.label "Trabajo de Grado" %>
+      <div class="field">
+        <%= f.text_field :gradework, :class => 'feed-input' %>
+      </div>
+      
+      <%= f.label "Usuario" %>
+      <div class="field">    
+        <%= f.text_field :user, :class => 'feed-input' %>
+      </div>      
   </div>
 
-  <div class="field">
-    <%= f.label :score %>
-    <%= f.number_field :score %>
-  </div>
-
-  <div class="field">
-    <%= f.label :gradework %>
-    <%= f.text_field :gradework %>
-  </div>
-
-  <div class="field">
-    <%= f.label :user %>
-    <%= f.text_field :user %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions" >
+        <%= f.submit value: button_name , :class => 'feed-button'  %>
   </div>
 <% end %>

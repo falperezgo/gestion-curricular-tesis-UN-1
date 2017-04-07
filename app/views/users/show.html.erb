@@ -1,24 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div id="page" class="container-fluid contenedorprincipal" >
+    <section role="main-content">       
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @user.firstname %>
-</p>
+        <div class="breadcrumb-class">
+            Está en:&nbsp;
+            <a href="./" target="_self" title="Ver">Usuario</a>&nbsp;&nbsp;/&nbsp;&nbsp;<b>Ver</b></div>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastname %>
-</p>
+            <div class="form-class-show">
+            <p id="notice"><%= notice %></p>
+            		<div class="bs-example">
+    					<div class="table-responsive"> 
+        				<table class="table table-bordered">
+            				<thead>
+                				<tr>
+                					<th>Nombre(s)</th>
+				                    <th>Apellido(s)</th>
+				                    <th>Correo electrónico</th>
+				                    <th>Identificación</th>
+									<th>Rol</th>
+									<th>Telefono</th>
+				                </tr>
+				            </thead>
+				            <tbody>
+				            	<tr>
+				                    <td><%= @user.firstname %></td>
+				                    <td><%= @user.lastname %></td>
+				                    <td><%= @user.email %></td>
+				                    <td><%= @user.identification %></td>
+									<td><%= %></td>
+									<td><%= @user.phone %></td>
+				                </tr>
+				        	</tbody>
+				        </table>	
+						</div>
+					</div>
+					<center>
+					<%= link_to 'Editar', edit_user_path(@user) %> |
+					<%= link_to 'Volver', users_path %>
+					</center>
+			</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Identification:</strong>
-  <%= @user.identification %>
-</p>
+	</section>
+</div>
 
 <p>
   <strong>Phone:</strong>

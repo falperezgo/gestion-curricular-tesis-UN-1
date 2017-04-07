@@ -1,3 +1,58 @@
 // Place all the styles related to the Feedbacks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+h1{
+	text-align: center;
+}
+
+.form-class{
+	background-color: #F5F5F1;
+	border-color: #DBDBDB;
+    border-style: outset;
+    border-width: 4px;    
+    padding: 20px;
+    height: auto;
+    width: 500px;
+    margin:0 auto;
+    text-align: left;
+    margin-bottom: 15px; 
+    margin-top: 15px;
+}
+
+.form-class-show{
+	@extend .form-class;
+	width: 700px;
+	padding: 20px;
+}
+
+.full-field{
+	padding: 20px;
+	position: relative;
+	left: 13%;
+}
+
+.field{
+	width: 500px; 
+	margin-left:auto; 
+	margin-right:auto;
+	margin-top: 5px;
+	margin-bottom: 10px; 
+}
+
+.feed-input{
+    width: 300px;
+}
+
+.feed-button{
+    width: 120px;
+    height: 30px;
+    border: 0px solid;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+	left: 37%;
+}
+

@@ -11,29 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :firstname %>
+  <div class="full-field">
+    <%= f.label "Nombre" %>
+    <div class="field">      
     <%= f.text_field :firstname %>
-  </div>
-
-  <div class="field">
-    <%= f.label :lastname %>
+	</div>
+	
+    <%= f.label "Apellido(s)" %>
+	<div class="field">
     <%= f.text_field :lastname %>
-  </div>
+	</div>
 
-  <div class="field">
-    <%= f.label :email %>
+	
+    <%= f.label "Correo electronico" %>
+	<div class="field">
     <%= f.text_field :email %>
-  </div>
+	</div>
 
-  <div class="field">
-    <%= f.label :identification %>
+  
+    <%= f.label "Identificacion" %>
+	<div class="field">
     <%= f.number_field :identification %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone %>
+	</div>
+	
+  
+    <%= f.label "Telefono" %>
+	<div class="field">
     <%= f.number_field :phone %>
+	</div>
+  
+  </div> 
+  
+  <div class="actions" >
+        <%= f.submit value: button_name , :class => 'feed-button'  %>
   </div>
 
     <div class="field">

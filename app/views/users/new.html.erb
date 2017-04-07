@@ -1,5 +1,22 @@
-<h1>New User</h1>
+<div id="page" class="container-fluid contenedorprincipal" >
+    <section role="main-content">       
 
-<%= render 'form', user: @user %>
+        <div class="breadcrumb-class">
+			Está en:&nbsp;
+		   <a href="#" target="_self" title="Usario"><b>Crear Usario</b></a>
+		</div>
 
-<%= link_to 'Back', users_path %>
+        <div class="form-class">
+
+			<h1>Crear Usuario</h1>
+
+			<%= render 'form', user: @user, button_name: "Crear" %>
+
+			<center><%= link_to 'Atras', users_path %></center>
+
+		</div>
+
+
+
+	</section>
+</div>
