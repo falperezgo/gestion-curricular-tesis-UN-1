@@ -14,8 +14,8 @@
   <tbody>
     <% @gradework_users.each do |gradework_user| %>
       <tr>
-        <td><%= gradework_user.gradework %></td>
-        <td><%= gradework_user.user %></td>
+        <td><%= gradework_user.gradework_id %></td>
+        <td><%= gradework_user.user_id %></td>
         <td><%= link_to 'Show', gradework_user %></td>
         <td><%= link_to 'Edit', edit_gradework_user_path(gradework_user) %></td>
         <td><%= link_to 'Destroy', gradework_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

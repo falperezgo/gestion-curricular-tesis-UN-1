@@ -15,23 +15,23 @@ class FileGradework < ApplicationRecord
   def self.files_by_id(id)
     find_by_id(id)
   end
-  
+
   def self.load_fileGradework()
     includes(:gradework)
   end
-    
+
   def self.fileGradework_by_gradework(gradework)
     includes(:gradework)
       .find_by_gradework_id(gradework)
   end
-  
+
   # def self.fileGradework_by_gradework_name(name)
     # includes(:gradework)
-	  # .where(gradework: {name: name})      
+	  # .where(gradework: {name: name})
   # end
-    
-  
-  
+
+
+
  def self.files_student_name(identification)
      includes(gradework: [:users])
 	 .where(users: {identification: identification})

@@ -15,16 +15,22 @@ class FileGradeworksController < ApplicationController
   # GET /file_gradeworks/new
   def new
     @file_gradework = FileGradework.new
+    @gradeworks = Gradework.all
   end
 
   # GET /file_gradeworks/1/edit
   def edit
+    @file_gradew = @file_gradework.gradework.id
+    @gradeworks = Gradework.all
   end
 
   # POST /file_gradeworks
   # POST /file_gradeworks.json
   def create
     @file_gradework = FileGradework.new(file_gradework_params)
+
+    gradework_id = params[:id]
+    @file_gradework.gradework << Gradework.find(gradework_id)
 
     respond_to do |format|
       if @file_gradework.save
@@ -40,6 +46,10 @@ class FileGradeworksController < ApplicationController
   # PATCH/PUT /file_gradeworks/1
   # PATCH/PUT /file_gradeworks/1.json
   def update
+
+    gradework_id = params[:id]
+    @file_gradework.gradework = Gradework.find(gradework_id)
+
     respond_to do |format|
       if @file_gradework.update(file_gradework_params)
         format.html { redirect_to @file_gradework, notice: 'File gradework was successfully updated.' }
@@ -69,6 +79,6 @@ class FileGradeworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def file_gradework_params
-      params.require(:file_gradework).permit(:name, :path, :description, :size, :gradework)
+      params.require(:file_gradework).permit(:name, :path, :description, :size, :gradework_id)
     end
 end

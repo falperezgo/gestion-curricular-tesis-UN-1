@@ -33,10 +33,15 @@
 
   <div class="field">
     <%= f.label :gradework %>
-    <%= f.text_field :gradework %>
+    <%= f.number_field :gradework %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gradeworks %>
+    <%= select_tag(:id, options_from_collection_for_select(@gradeworks ,:id, :name, @file_gradew)) %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit%>
   </div>
 <% end %>

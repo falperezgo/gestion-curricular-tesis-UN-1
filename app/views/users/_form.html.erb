@@ -40,12 +40,15 @@
         <%= f.number_field :phone %>
       </div>
 
+      <%= f.label "Rol" %>
+      <div class="field">
+        <%= select_tag(:rol, options_from_collection_for_select(@roles ,:id, :name, @rol_users), multiple: true) %>
+      </div>
+
     </div>
 
-    <div class="field">
-      <%= f.label :roles %>
-      <%= select_tag(:rol, options_from_collection_for_select(@roles ,:id, :name, @rol_users), multiple: true) %>
-    </div>
+
+
 
     <div class="actions" >
       <%= f.submit value: button_name , :class => 'feed-button'  %>

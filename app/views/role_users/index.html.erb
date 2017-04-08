@@ -14,8 +14,8 @@
   <tbody>
     <% @role_users.each do |role_user| %>
       <tr>
-        <td><%= role_user.user %></td>
-        <td><%= role_user.role %></td>
+        <td><%= role_user.user_id %></td>
+        <td><%= role_user.role_id %></td>
         <td><%= link_to 'Show', role_user %></td>
         <td><%= link_to 'Edit', edit_role_user_path(role_user) %></td>
         <td><%= link_to 'Destroy', role_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
