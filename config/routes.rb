@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   
+  get 'students/index'
+
   resources :role_users
   resources :file_gradeworks
   resources :feedbacks
