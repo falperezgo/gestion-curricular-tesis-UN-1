@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   
   get 'students/index'
   get 'directors/index'
+  get 'directors/home'
+  get 'jurys/index'
+  get 'jurys/home'
 
   resources :role_users
   resources :file_gradeworks
