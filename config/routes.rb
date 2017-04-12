@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   
   get 'students/index'
+  get 'directors/index'
 
   resources :role_users
   resources :file_gradeworks

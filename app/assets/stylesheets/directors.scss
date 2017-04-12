@@ -1,0 +1,195 @@
+// Place all the styles related to the Student controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Style the tab */
+
+
+.scroll{
+
+	overflow-x: hidden;
+	//border: solid 3px red;
+
+}
+
+
+.uno{
+	border: solid 3px #f1f1f1;
+	border-style: outset;
+	width: 500px;
+	height: auto;
+	align-content: center;
+	position: relative;
+	float: right;
+	right: 35px;
+	margin: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-radius: 10px;
+}
+.jury{
+	/*background-color: blue;*/
+	margin-bottom: 2px;
+	text-align: left;
+	padding: 5px;
+}
+
+.fecha{
+	//background-color: red;
+	margin-top: 2px;
+	text-align: right;
+	padding: 5px;
+
+}
+
+.comment{
+	//background-color: yellow;
+	text-align: center;
+	padding: 5px;
+	width: 460px;
+	border-top: solid 2px;
+	border-bottom: solid 2px;
+	border-style: dotted;
+	border-color: lightgray;
+	margin:auto;
+}
+
+.cbody{
+	border-left: solid 4px;
+	border-left-color: gray;
+	background-color: #f1f1f1; 
+	height: auto ;
+	width: auto;
+	padding: 20px
+}
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    width: 240px;
+    margin-bottom: 10px;
+}
+
+/* Style the buttons inside the tab */
+.tablinks {
+    background-color: inherit;
+    float: left;
+    border: solid 1px lightgray;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+
+}
+
+/* Change background color of buttons on hover */
+.tablinks :hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tablinks.active {
+    background-color: #E5E5E5;
+
+}
+
+.panel.panel-default{
+	display: none;
+	margin-top: -10px;
+}
+
+.panel-heading{
+	display: none;
+}
+
+.panel-title{
+	display: none;
+	font-size: 25px;
+}
+
+.panel-body{
+	display: none;
+	border-radius: 8px;
+}
+
+.relleno{
+	height: 300px;
+	margin-top: -10px;
+	margin-bottom: 15px;
+	background-color: #f1f1f1;
+	border-radius: 8px;
+
+
+}
+
+.modal-title{
+	font-size: 40px;
+	padding: 2px;
+
+}
+
+
+.boton {
+  background-color: white ;
+  background-size: 60%; /* Tamaño de la imagen */
+  height: 170px;  /* Alto del botón */
+  width: 170px;  /* Ancho del botón */
+  display: inline-block;
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow:
+	/* Sombras externa */
+	inset 0 10px 15px rgba(255,255,255,.35), inset 0 -10px 15px rgba(0,0,0,.05), inset 10px 0 15px rgba(0,0,0,.05), inset -10px 0 15px rgba(0,0,0,.05),
+	/* Sombra interna */
+	0 5px 20px rgba(0,0,0,.1);
+  margin-right: 20px; 
+  margin-left: 30px;
+  font-size: 22px;
+  
+}
+
+/* Al presionar */
+.boton:active {
+  box-shadow: inset 0 5px 30px rgba(0,0,0,.2); /* Sombra interior */
+  background-size: 55%; /* Cambiamos el tamaño de la imagen */
+  
+}
+
+.container{
+	padding: 40px;
+	//border: solid 3px red;
+	width: 550px;
+
+
+}
+
+.tesis-text{
+
+	border-left: solid 4px;
+	border-color: gray;
+	margin: 5px;
+	padding: 5px;
+	background-color: #f1f1f1; 
+	height: auto ;
+	width: auto;
+}
+
+.modal-body{
+	margin: auto;
+	//border: solid 3px red;
+	width: 300px;
+
+}
+
+.input-modal-text{
+	width: 270px;
+	height: 100px;
+
+}
+
+.asunt-modal-text{
+	width: 270px;
+
+}
