@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   
+  get 'administrator/home'
+
   get 'students/index'
   get 'directors/index'
   get 'directors/home'
