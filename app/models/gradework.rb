@@ -4,7 +4,7 @@ class Gradework < ApplicationRecord
   has_many :filegradeworks
   has_many :feedbacks
 
-  validates :name, :status, :begin_date, :semester, presence: true
+  validates :name, :begin_date, :semester, presence: true
 
   default_scope {order("gradeworks.name")}
   scope :order_by_name, -> (ord) {order("gradeworks.name #{ord}")}
@@ -46,25 +46,27 @@ class Gradework < ApplicationRecord
         .where(roles: {name: role})
   end
 
-  def self.gradeworks_student()
-    includes(users: [:roles])
-	.where(roles: {name: "Administator"})
+
+  def gradeworks_student()
+    joins(users: [:roles])
+	.where(roles: {name: "Student"})
   end
 
-  def self.gradeworks_administrator()
-    includes(users: [:roles])
-	.where(roles: {name: "Administator"})
+  def gradeworks_administrator()
+    joins(users: [:roles])
+	.where(roles: {name: "Administrator"})
   end
 
-  def self.gradeworks_director()
-    includes(users: [:roles])
-	.where(roles: {name: "Teacher"})
+  def gradeworks_director()
+    joins(users: [:roles])
+	.where(roles: {name: "Director"})
   end
 
   def self.gradeworks_jury()
     includes(users: [:roles])
 	.where(roles: {name: "Jury"})
   end
+
 
   #CarrierWave
   mount_uploader :file, FileUploader

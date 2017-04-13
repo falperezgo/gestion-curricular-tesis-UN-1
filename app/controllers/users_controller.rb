@@ -32,8 +32,10 @@ class UsersController < ApplicationController
     #user_params
     @user = User.new(user_params)
 
+    if params.has_key?(:rol) and params[:rol] != [""]
     role_id = params[:rol]
     @user.roles << Role.find(role_id)
+    end
 
     respond_to do |format|
       if @user.save
@@ -54,9 +56,12 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
 
-    role_id = params[:rol]
-    @user.roles = Role.find(role_id)
+    @user.roles = []
 
+    if params.has_key?(:rol) and params[:rol] != [""]
+      role_id = params[:rol]
+      @user.roles << Role.find(role_id)
+    end
 
     respond_to do |format|
       if @user.update(user_params)

@@ -28,7 +28,7 @@ RoleUser.destroy_all
 GradeworkUser.destroy_all
 
 status = ['sin calificar','calificando','calificado']
-roles = ['Student', 'Administator', 'Jury', 'Teacher']
+roles = ['Student', 'Administrator', 'Jury', 'Director']
 
 
 4.times do |index|
@@ -102,11 +102,11 @@ end
 
 p "Created #{GradeworkUser.count} GradeworkUser"
 
-100.times do |index|
-  RoleUser.create!(
-      role_id: Role.ids.sample,
-      user_id: User.ids.sample
-  )
-end
+#100.times do |index|
+#  RoleUser.create!(
+#      role_id: Role.ids.sample,
+#      user_id: User.ids.sample
+#  )
+#end
 
 p "Created #{RoleUser.count} RoleUser"

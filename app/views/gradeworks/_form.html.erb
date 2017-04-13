@@ -24,19 +24,20 @@
     <!-- Aqui va para llamar la lista de estudiantes-->
     <%= f.label :status, 'Estudiante', class: 'label-gradework' %>
     <div class="field">
-      <%= f.select :status, class: 'form-gradework' %>
+      <%= select_tag(:students, options_from_collection_for_select(@students ,:id, :full_name, @grad_students), multiple: true, :prompt => "Ninguno") %>
     </div>
 
     <!-- Aqui va para llamar la lista de Directores-->
     <%= f.label :status, 'Director', class: 'label-gradework' %>
     <div class="field">
-      <%= f.select :status, class: 'form-gradework' %>
+      <%= select_tag(:directors, options_from_collection_for_select(@directors ,:id, :full_name, @grad_directors), :prompt => "Ninguno") %>
+
     </div>
 
     <!-- Aqui va para llamar la lista de Jurados-->
     <%= f.label :status, 'Jurado', class: 'label-gradework' %>
     <div class="field">
-      <%= f.select :status, class: 'form-gradework' %>
+      <%= select_tag(:juries, options_from_collection_for_select(@juries,:id, :full_name, @grad_juries), multiple: true, :prompt => "Ninguno") %>
     </div>
 
 
@@ -55,13 +56,20 @@
       <%= @gradework.file_identifier %>
       <br>
       <%= f.file_field :file %>
+
+      <div><%= link_to 'Borrar', @gradework.remove_file! %>
+        <%= @gradework.save %>
+      </div>
     </div>
-    <div><%= link_to 'Borrar', @gradework.remove_file! %>
-    <%= @gradework.save %> </div>
+
+
+
+
 
 
     <div class="actions text-center">
       <%= f.submit value: button_name %>
     </div>
+
   <% end %>
 </div>
