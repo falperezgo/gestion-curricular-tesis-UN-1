@@ -24,7 +24,7 @@
         <td><%= file_gradework.gradework.file_url %></td>
         <td><%= file_gradework.description %></td>
         <td><%= file_gradework.gradework.file.size %></td>
-        <td><%= file_gradework.gradework %></td>
+        <td><%= file_gradework.gradework_id %></td>
         <td><%= link_to('abrir', file_gradework.gradework.file_url) if file_gradework.gradework.file_url  %></td>
         <td><%= link_to 'Show', file_gradework %></td>
         <td><%= link_to 'Edit', edit_file_gradework_path(file_gradework) %></td>
