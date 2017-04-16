@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  path: MyString
-  description: MyText
-  size: 1
-  gradework: 
+  name: Nombre de tesis
+  path: C:\Users\angie\Downloads\1.Introduction
+  description: Descripcion de la tesis
+  size: 538
+  gradework:
 
 two:
   name: MyString
   path: MyString
   description: MyText
   size: 1
-  gradework: 
+  gradework:

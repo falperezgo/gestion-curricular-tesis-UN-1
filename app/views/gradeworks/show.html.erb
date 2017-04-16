@@ -1,10 +1,10 @@
 <div class="container-fluid contenedorprincipal">
   <section role="main-content">
-      <div class="breadcrumb-class">
-          Está en:&nbsp;
-          <a href="#" target="_self" title="Inicio"><b>Inicio</b></a>
-      </div>
-      <br>
+    <div class="breadcrumb-class">
+      Está en:&nbsp;
+      <a href="#" target="_self" title="Inicio"><b>Inicio</b></a>
+    </div>
+    <br>
     <div class="col-md-6 col-md-offset-3 form-container-gradework">
       <h1>Tesis</h1>
       <p id="notice"><%= notice %></p>
@@ -48,6 +48,47 @@
           <strong class="margin-field-show">Semestre:</strong>
           <%= @gradework.semester %>
         </p>
+
+
+        <table>
+          <thead>
+          <tr>
+            <th class="table-head">Nombre</th>
+            <th class="table-head">Apellido</th>
+            <th class="table-head">Roles</th>
+
+          </tr>
+          </thead>
+
+          <tbody>
+          <% @gradework.users.each do |user| %>
+          <tr>
+
+                <td><%= user.firstname %></td>
+                <td><%= user.lastname %></td>
+
+                <td>
+                  <% user.roles.each do |role| %>
+                      <ul>
+                        <%= role.name %>
+                      </ul>
+                  <% end %>
+                </td>
+          </tr>
+          <% end %>
+          </tbody>
+        </table>
+
+
+        <br>
+
+        <p>
+          <strong class="margin-field-show">Archivo:</strong>
+          <%= @gradework.file_identifier %>
+          <%= link_to('Open', @gradework.file.url) if @gradework.file?%>
+
+        </p>
+
       </div>
       <div class="text-center">
         <%= link_to 'Editar', edit_gradework_path(@gradework) %> |
@@ -56,4 +97,3 @@
     </div>
   </section>
 </div>
-

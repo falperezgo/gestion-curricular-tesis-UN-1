@@ -1,60 +1,56 @@
 <%= form_for(user) do |f| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <% if user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
-  <div class="full-field">
-    <%= f.label "Nombre" %>
-    <div class="field">      
-    <%= f.text_field :firstname %>
-	</div>
-	
-    <%= f.label "Apellido(s)" %>
-	<div class="field">
-    <%= f.text_field :lastname %>
-	</div>
+    <div class="full-field">
+      <%= f.label "Nombre" %>
+      <div class="field">
+        <%= f.text_field :firstname %>
+      </div>
 
-	
-    <%= f.label "Correo electronico" %>
-	<div class="field">
-    <%= f.text_field :email %>
-	</div>
+      <%= f.label "Apellido(s)" %>
+      <div class="field">
+        <%= f.text_field :lastname %>
+      </div>
 
-  
-    <%= f.label "Identificacion" %>
-	<div class="field">
-    <%= f.number_field :identification %>
-	</div>
-	
-  
-    <%= f.label "Telefono" %>
-	<div class="field">
-    <%= f.number_field :phone %>
-	</div>
-  
-  </div> 
-  
-  <div class="actions" >
-        <%= f.submit value: button_name , :class => 'feed-button'  %>
-  </div>
 
-    <div class="field">
-      <%= f.label :roleo %>
-    <%= select_tag(:rol, options_from_collection_for_select(@roles ,:id, :name), multiple: true) %>
+      <%= f.label "Correo electronico" %>
+      <div class="field">
+        <%= f.text_field :email %>
+      </div>
+
+
+      <%= f.label "Identificacion" %>
+      <div class="field">
+        <%= f.number_field :identification %>
+      </div>
+
+
+      <%= f.label "Telefono" %>
+      <div class="field">
+        <%= f.number_field :phone %>
+      </div>
+
+      <%= f.label "Rol" %>
+      <div class="field">
+        <%= select_tag(:rol, options_from_collection_for_select(@roles ,:id, :name, @rol_users), multiple: true, :prompt => "Ninguno") %>
+      </div>
+
     </div>
 
 
 
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions" >
+      <%= f.submit value: button_name , :class => 'feed-button'  %>
+    </div>
 <% end %>

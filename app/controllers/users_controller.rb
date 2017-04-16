@@ -20,8 +20,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-      id = @user.id
-      
+      @rol_users = @user.roles.ids
       @roles = Role.all
   end
 
@@ -33,11 +32,10 @@ class UsersController < ApplicationController
     #user_params
     @user = User.new(user_params)
 
-
+    if params.has_key?(:rol) and params[:rol] != [""]
     role_id = params[:rol]
     @user.roles << Role.find(role_id)
-
-
+    end
 
     respond_to do |format|
       if @user.save
@@ -57,6 +55,14 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+
+    @user.roles = []
+
+    if params.has_key?(:rol) and params[:rol] != [""]
+      role_id = params[:rol]
+      @user.roles << Role.find(role_id)
+    end
+
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }

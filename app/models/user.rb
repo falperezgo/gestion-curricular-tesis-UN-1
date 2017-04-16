@@ -17,6 +17,13 @@ class User < ApplicationRecord
   scope :order_by_identification, -> (ord) {order("users.identification #{ord}")}
 
 
+
+
+
+  def full_name
+    "#{firstname}  #{lastname}"
+  end
+
   def self.users_by_id(id)
     find_by_id(id)
   end
@@ -45,12 +52,12 @@ class User < ApplicationRecord
 
   def self.users_director()
     joins(:roles).select("users.firstname, users.lastname, users.id")
-    .where({ roles: { name: "Teacher" } })
+    .where({ roles: { name: "Director" } })
   end
 
   def self.users_administrator()
     joins(:roles).select("users.firstname, users.lastname, users.id")
-    .where({ roles: { name: "Administator" } })
+    .where({ roles: { name: "Administrator" } })
   end
 
   def self.users_gradework_qualified()

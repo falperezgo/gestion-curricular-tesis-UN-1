@@ -21,6 +21,7 @@ class FileGradeworksControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to file_gradework_url(FileGradework.last)
+    assert_equal 'File gradework successfully created.', flash[:notice]
   end
 
   test "should show file_gradework" do
@@ -45,4 +46,22 @@ class FileGradeworksControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to file_gradeworks_url
   end
+
+  test "name should not be null" do
+    #filegradeworkname = FileGradework.new
+    filegradeworkname = @file_gradework
+    assert filegradeworkname.name != nil
+  end
+
+  test "path should not be null" do
+    #filegradeworkpath = FileGradework.new
+    filegradeworkpath = @file_gradework
+    assert filegradeworkpath.path != nil
+  end
+
+  test "should show gradework url" do
+    get gradework_url(@file_gradework)
+    assert_response :success
+  end
+
 end

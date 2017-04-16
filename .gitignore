@@ -18,3 +18,4 @@ config/database.yml
 
 # Ignore Byebug command history file.
 .byebug_history
+*.pdf
