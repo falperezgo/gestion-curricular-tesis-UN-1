@@ -58,12 +58,12 @@
 								<p class="text-button-admin">Nuevo<p>
 						</div>
 						<div class="crud-button">
-								<button id="editButton" type="button" class="general-circle-button users-button" data-toggle="modal" data-target="#editUserModal" disabled>
+								<button id="editButton" type="button" class="general-circle-button edit-button crud-button-disabled" data-toggle="modal" data-target="#editUserModal" disabled>
 								</button>
 								<p class="text-button-admin">Modificar<p>
 						</div>
 						<div class="text-center">
-								<button id ="deleteButton" type="button" class="general-circle-button users-button" data-id ="0" onclick="deleteUser(this)" disabled>
+								<button id ="deleteButton" type="button" class="general-circle-button delete-button crud-button-disabled" data-id ="0" onclick="deleteUser(this)" disabled>
 								</button>
 								<p class="text-button-admin" style="margin-left: auto; margin-right: auto;">Eliminar<p>
 						</div>
@@ -93,40 +93,41 @@
             <!-- Modal Body -->
             <div class="modal-body">
                 
-                <form role="form" id="newForm" action="" method="post">
-									<div class="form-group">
+                <form role="form" id="newForm" action="users" method="post">
+					<div class="form-group">
                   	<label for="inputName">Nombre:</label>
                     <input type="text" class="form-control"
-                      id="inputName" placeholder="Ingrese el nombre" required/>
+                      id="inputName" placeholder="Ingrese el nombre" name="user[firstname]" required/>
 									</div>
 									<div class="form-group">
                   	<label for="inputLastName">Apellido:</label>
                     <input type="text" class="form-control"
-                      id="inpuLasttName" placeholder="Ingrese el apellido" required/>
+                      id="inpuLasttName" placeholder="Ingrese el apellido" name="user[lastname]" required/>
 									</div>
                   <div class="form-group">
 										<label for="inputEmail">Correo electrónico:</label>
 											<input type="email" class="form-control"
-											id="inputEmail" placeholder="Ingrese el correo electrónico"/>
+											id="inputEmail" placeholder="Ingrese el correo electrónico" name="user[email]"/>
 									</div>
-									<div class="form-group">
+					<div class="form-group">
                   	<label for="inputDoc">Documento:</label>
                     <input type="number" class="form-control"
-                      id="inputDoc" placeholder="Ingrese el documento" required/>
+                      id="inputDoc" placeholder="Ingrese el documento" name="user[identification]" required/>
 									</div>
 									<div class="form-group">
                   	<label for="inputPhone">Teléfono:</label>
                     <input type="phone" class="form-control"
-                      id="inputPhone" placeholder="Ingrese el teléfono" required/>
+                      id="inputPhone" placeholder="Ingrese el teléfono" name="user[phone]" required/>
 									</div>
-									<div class="form-group">
-                  	<label for="inputRole">Rol:</label>
-										<select multiple>
-											<option value="Student">Estudiante</option>
-											<option value="Jury">Jurado</option>
-											<option value="Administrator">Administrator</option>
-										</select>
-									</div>
+					<div class="form-group">
+                  		<label for="inputRole">Rol:</label>
+						<select multiple name="rol[]" class="form-control" style="width: 100%;">
+							<option value="1">Estudiante</option>
+							<option value="2">Administrator</option>
+							<option value="3">Jurado</option>
+							<option value="4">Profesor</option>
+						</select>
+					</div>
             </div>
             
             <!-- Modal Footer -->
@@ -185,19 +186,20 @@
                     <input type="phone" class="form-control"
                       id="editPhone" placeholder="Ingrese el teléfono" name="user[phone]" required/>
 									</div>
-									<div class="form-group">
-                  	<label for="inputRole">Rol:</label>
-										<select multiple>
-											<option value="Student">Estudiante</option>
-											<option value="Jury">Jurado</option>
-											<option value="Administrator">Administrator</option>
-										</select>
-									</div>
+					<div class="form-group">
+                  		<label for="inputRole">Rol:</label>
+						<select multiple name="rol[]">
+							<option value="1">Estudiante</option>
+							<option value="2">Administrator</option>
+							<option value="3">Jurado</option>
+							<option value="4">Profesor</option>
+						</select>
+					</div>
             </div>
             
             <!-- Modal Footer -->
             <div class="modal-footer">
-                <button type="submit" class="btn btn-sucess">Editar usuario</button>
+                <button type="submit" class="btn btn-success">Editar usuario</button>
             </div>
 						</form>
         </div>
@@ -215,13 +217,17 @@
 					if ( $(this).hasClass('selected') ) {
 							$(this).removeClass('selected');
 							$('#editButton').prop( "disabled", true );
+							$('#editButton').addClass('crud-button-disabled');
 							$('#deleteButton').prop( "disabled", true );
+							$('#deleteButton').addClass('crud-button-disabled');
 					}
 					else {
 							table.$('tr.selected').removeClass('selected');
 							$(this).addClass('selected');
 							$('#editButton').prop( "disabled", false );
+							$('#editButton').removeClass('crud-button-disabled');
 							$('#deleteButton').prop( "disabled", false );
+							$('#deleteButton').removeClass('crud-button-disabled');
 							$('#deleteButton').data('id', $(this).data('id')) ;
 							$('#editFirstName').val($(this).data('firstname'));
 							$('#editLastName').val($(this).data('lastname'));
@@ -229,8 +235,8 @@
 							$('#editDoc').val($(this).data('doc'));
 							$('#editPhone').val($(this).data('phone'));
 							var action = 'users/' + ($(this).data('id'))
-                    $('#editForm').attr('action', action);
-					}
+								$('#editForm').attr('action', action);
+							}
 			} );
 	} );
 

@@ -5,6 +5,9 @@ class GradeworksController < ApplicationController
   # GET /gradeworks.json
   def index
     @gradeworks = Gradework.all
+    @juries = User.users_jury
+    @directors = User.users_director
+    @students = User.users_student
   end
 
   # GET /gradeworks/1
