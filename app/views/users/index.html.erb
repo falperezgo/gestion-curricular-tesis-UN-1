@@ -1,59 +1,263 @@
-<div id="page" class="container-fluid contenedorprincipal" >
-	<section role="main-content">
+<% content_for :head do %>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="/sweetalert-master/dist/sweetalert.css">
 
-		<div class="breadcrumb-class">
-			Está en:&nbsp;
-		   <a href="#" target="_self" title="Usuario"><b>Usuario</b></a>
-		</div>
-
-		<br>
-
-		<p id="notice"><%= notice %></p>
-
-		<h1>Usuarios</h1>
-        <br></br>
-		<div class="bs-example">
-          <div class="table-responsive">
-			<table class="table table-bordered">
-			  <thead>
-				<tr>
-				  <th>Nombre(s)</th>
-				  <th>Apellido(s)</th>
-				  <th>Correo Electrónico</th>
-				  <th>Identificación</th>
-				  <th>Rol</th>
-				  <th>Telefono</th>
-				  <th colspan="3">Acción</th>
-				</tr>
-			  </thead>
-
-			  <tbody>
-				<% @users.each do |user| %>
-				  <tr>
-					<td><%= user.firstname %></td>
-					<td><%= user.lastname %></td>
-					<td><%= user.email %></td>
-					<td><%= user.identification %></td>
-					<td><% user.roles.each do |role| %>
-                <div>
-                  <%= role.name %>
-                </div>
-            <% end %></td>
-					<td><%= user.phone %></td>
-					<td><%= link_to 'Ver', user %></td>
-					<td><%= link_to 'Editar', edit_user_path(user) %></td>
-					<td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-				  </tr>
-				<% end %>
-			  </tbody>
-			</table>
-          </div>
+<% end %>
+<div class="main-container">
+    <div class="container-header">
+        <h1>Administración de usuarios</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+					<div class="col-md-6" style="overflow: scroll;">
+						<table id="usersTable" class="display" cellspacing="0" width="100%">
+							<thead>
+									<tr>
+											<th>Nombre</th>
+											<th>Apellido</th>
+											<th>Correo</th>
+											<th>Documento</th>
+											<th>Rol</th>
+											<th>Teléfono</th>
+									</tr>
+							</thead>
+							<tfoot>
+									<tr>
+											<th>Nombre</th>
+											<th>Apellido</th>
+											<th>Correo</th>
+											<th>Documento</th>
+											<th>Rol</th>
+											<th>Teléfono</th>
+									</tr>
+							</tfoot>
+							<tbody>
+								<% @users.each do |user| %>
+									<tr data-id = '<%= user.id %>' data-firstname = '<%= user.firstname %>'  data-lastname = '<%= user.lastname %>'  
+									data-email = '<%= user.email %>'  data-doc = '<%= user.identification %>'  data-phone = '<%= user.phone %>' 
+									data-roles = '<% user.roles.each do |role| %> <%= role.name %>, <% end %>'  >
+									<td><%= user.firstname %></td>
+									<td><%= user.lastname %></td>
+									<td><%= user.email %></td>
+									<td><%= user.identification %></td>
+									<td><% user.roles.each do |role| %>
+											<div>
+												<%= role.name %>
+											</div>
+									<% end %></td>
+									<td><%= user.phone %></td>
+									</tr>
+								<% end %>
+							</tbody>
+					</table>
+					</div>
+					<div class="col-md-6 text-center" style="margin-top:5%;">
+						<div class="crud-button">
+								<button type="button" class="general-circle-button users-button" data-toggle="modal" data-target="#newUserModal">
+								</button>
+								<p class="text-button-admin">Nuevo<p>
+						</div>
+						<div class="crud-button">
+								<button id="editButton" type="button" class="general-circle-button users-button" data-toggle="modal" data-target="#editUserModal" disabled>
+								</button>
+								<p class="text-button-admin">Modificar<p>
+						</div>
+						<div class="text-center">
+								<button id ="deleteButton" type="button" class="general-circle-button users-button" data-id ="0" onclick="deleteUser(this)" disabled>
+								</button>
+								<p class="text-button-admin" style="margin-left: auto; margin-right: auto;">Eliminar<p>
+						</div>
+					</div>
+					
         </div>
-
-		<br>
-		<center>
-		<%= link_to 'Nuevo Usuario', new_user_path %>
-	</center>
-
-	</section>
+    </div>
 </div>
+
+<!-- Modal Nuevo Usuario-->
+<div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title text-center" id="myModalLabel">
+                    Nuevo Usuario
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+                <form role="form" id="newForm" action="" method="post">
+									<div class="form-group">
+                  	<label for="inputName">Nombre:</label>
+                    <input type="text" class="form-control"
+                      id="inputName" placeholder="Ingrese el nombre" required/>
+									</div>
+									<div class="form-group">
+                  	<label for="inputLastName">Apellido:</label>
+                    <input type="text" class="form-control"
+                      id="inpuLasttName" placeholder="Ingrese el apellido" required/>
+									</div>
+                  <div class="form-group">
+										<label for="inputEmail">Correo electrónico:</label>
+											<input type="email" class="form-control"
+											id="inputEmail" placeholder="Ingrese el correo electrónico"/>
+									</div>
+									<div class="form-group">
+                  	<label for="inputDoc">Documento:</label>
+                    <input type="number" class="form-control"
+                      id="inputDoc" placeholder="Ingrese el documento" required/>
+									</div>
+									<div class="form-group">
+                  	<label for="inputPhone">Teléfono:</label>
+                    <input type="phone" class="form-control"
+                      id="inputPhone" placeholder="Ingrese el teléfono" required/>
+									</div>
+									<div class="form-group">
+                  	<label for="inputRole">Rol:</label>
+										<select multiple>
+											<option value="Student">Estudiante</option>
+											<option value="Jury">Jurado</option>
+											<option value="Administrator">Administrator</option>
+										</select>
+									</div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success">Crear usuario</button>
+            </div>
+						</form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Editar Usuario-->
+<div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title text-center" id="myModalLabel">
+                    Editar Usuario
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+                <form role="form" id="editForm" action="" method="post">
+									<input type="hidden" name="_method" value="put" />
+									<div class="form-group">
+                  	<label for="editFirstName">Nombre:</label>
+                    <input type="text" class="form-control"
+                      id="editFirstName" placeholder="Ingrese el nombre" name="user[firstname]" required/>
+									</div>
+									<div class="form-group">
+                  	<label for="editLastName">Apellido:</label>
+                    <input type="text" class="form-control"
+                      id="editLastName" placeholder="Ingrese el apellido" name="user[lastname]" required/>
+									</div>
+                  <div class="form-group">
+										<label for="editEmail">Correo electrónico:</label>
+											<input type="email" class="form-control"
+											id="editEmail" placeholder="Ingrese el correo electrónico" name="user[email]" />
+									</div>
+									<div class="form-group">
+                  	<label for="editDoc">Documento:</label>
+                    <input type="number" class="form-control"
+                      id="editDoc" placeholder="Ingrese el documento" name="user[identification]" required/>
+									</div>
+									<div class="form-group">
+                  	<label for="editPhone">Teléfono:</label>
+                    <input type="phone" class="form-control"
+                      id="editPhone" placeholder="Ingrese el teléfono" name="user[phone]" required/>
+									</div>
+									<div class="form-group">
+                  	<label for="inputRole">Rol:</label>
+										<select multiple>
+											<option value="Student">Estudiante</option>
+											<option value="Jury">Jurado</option>
+											<option value="Administrator">Administrator</option>
+										</select>
+									</div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-sucess">Editar usuario</button>
+            </div>
+						</form>
+        </div>
+    </div>
+</div>
+
+<% content_for :bottom do %>
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+<script src="/sweetalert-master/dist/sweetalert.min.js"></script>
+<script>
+	$(document).ready(function() {
+    var table = $('#usersTable').DataTable();
+
+			$('#usersTable tbody').on( 'click', 'tr', function () {
+					if ( $(this).hasClass('selected') ) {
+							$(this).removeClass('selected');
+							$('#editButton').prop( "disabled", true );
+							$('#deleteButton').prop( "disabled", true );
+					}
+					else {
+							table.$('tr.selected').removeClass('selected');
+							$(this).addClass('selected');
+							$('#editButton').prop( "disabled", false );
+							$('#deleteButton').prop( "disabled", false );
+							$('#deleteButton').data('id', $(this).data('id')) ;
+							$('#editFirstName').val($(this).data('firstname'));
+							$('#editLastName').val($(this).data('lastname'));
+							$('#editEmail').val($(this).data('email'));
+							$('#editDoc').val($(this).data('doc'));
+							$('#editPhone').val($(this).data('phone'));
+							var action = 'users/' + ($(this).data('id'))
+                    $('#editForm').attr('action', action);
+					}
+			} );
+	} );
+
+
+</script>
+<script>
+	//Warning Message
+                function deleteUser(obj){
+                    swal({
+											title: "Está seguro?",
+											text: "No se podran recuperar lo datos del usuario en un futuro",
+											type: "warning",
+											showCancelButton: true,
+											confirmButtonColor: "#DD6B55",
+											confirmButtonText: "Confirmar",
+											closeOnConfirm: false
+                    },
+										function(){
+											$.ajax({
+												url: 'users/' + $(obj).data('id'),
+                        type: 'DELETE'
+											});
+											swal("Elminado!", "El usuario ha sido eliminado", "success");
+											setTimeout(function(){
+														window.location.reload();
+											}, 1000); 
+										});
+										}
+</script>
+<% end %>
