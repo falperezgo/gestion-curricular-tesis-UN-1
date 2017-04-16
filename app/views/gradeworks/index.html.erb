@@ -1,53 +1,5 @@
 
 
-
-<div class="container-fluid contenedorprincipal">
-  <section role="main-content">
-      <div class="breadcrumb-class">
-          Está en:&nbsp;
-          <a href="#" target="_self" title="Inicio"><b>Inicio</b></a>
-      </div>
-      <br>
-    <div class="col-md-10 col-md-offset-1 form-container-gradework">
-    <p id="notice"><%= notice %></p>
-      <h1>Lista de tesis</h1>
-
-      <table>
-        <thead>
-          <tr>
-            <th class="table-head">Nombre</th>
-            <th>Estado</th>
-            <th class="table-head">Estudiante</th>
-            <th class="table-head">Director</th>
-            <th class="table-head">Jurados</th>
-            <th>Semestre</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @gradeworks.each do |gradework| %>
-            <tr>
-              <td><%= gradework.name %></td>
-              <td><%= gradework.status %></td>
-              <td>Estudiante</td>
-              <td>Director</td>
-              <td>Jurados</td>
-              <td><%= gradework.semester %></td>
-              <td><%= link_to 'Ver', gradework %></td>
-              <td><%= link_to 'Editar', edit_gradework_path(gradework) %></td>
-              <td><%= link_to 'Eliminar', gradework, method: :delete, data: { confirm: 'Seguro desea eliminar esta tesis?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <div class="text-center">
-        <%= link_to 'Nueva Tesis', new_gradework_path %>
-      </div>
-      </div>
-    </div>
-  </section>
-</div>
 <% content_for :head do %>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="/sweetalert-master/dist/sweetalert.css">
