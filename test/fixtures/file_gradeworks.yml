@@ -8,8 +8,8 @@ one:
   gradework:
 
 two:
-  name: MyString
-  path: MyString
-  description: MyText
-  size: 1
+  name: Name2
+  path:
+  description: piu piu
+  size: 
   gradework:
