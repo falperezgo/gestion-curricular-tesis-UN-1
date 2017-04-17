@@ -35,4 +35,12 @@ class UserTest < ActiveSupport::TestCase
       assert_not_nil @user.errors[:phone], "no validation error for phone present"
   end
     
+  test "identification is within range" do
+      assert_includes 0..9999999999, @user.identification
+  end
+    
+  test "phone is within range" do
+      assert_includes 0..999999999, @user.phone
+  end
+    
 end
