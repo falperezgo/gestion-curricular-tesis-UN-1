@@ -22,4 +22,27 @@ class FileGradeworkTest < ActiveSupport::TestCase
     filegradeworkpath = @file_gradework
     assert filegradeworkpath.path != nil, "path is null"
   end
+
+  test "unique path" do
+    @file_gradework = FileGradework.new(:path => file_gradeworks(:thr).path)
+    assert !@file_gradework.save
+    assert_equal ["path has already been taken"], @file_gradework.errors[:path]
+  end
+
+  test "name should be a String" do
+      assert_kind_of String, @file_gradework.name
+  end
+
+  test "path should be a String" do
+      assert_kind_of String, @file_gradework.path
+  end
+
+  test "size should be a Integer" do
+      assert_kind_of Integer, @file_gradework.size
+  end
+
+  test "gradework id should be a Integer" do
+      assert_kind_of Integer, @file_gradework.gradework_id
+  end
+
 end

@@ -5,11 +5,18 @@ one:
   path: C:\Users\angie\Downloads\1.Introduction
   description: Descripcion de la tesis
   size: 538
-  gradework:
+  gradework: 2
 
 two:
   name: Name2
   path:
   description: piu piu
-  size: 
+  size:
+  gradework:
+
+thr:
+  name: Name3
+  path: C:\Users\angie\Downloads\1.Introduction
+  description: Descripcion
+  size: 5754
   gradework:
