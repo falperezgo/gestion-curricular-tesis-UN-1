@@ -16,80 +16,37 @@
 				<div class="panel fondo">
 					<div>
 					  <div class="scroll">
+					  
+						<% @gradeworks.each do |gradework| %>	
 
 						<div class="Duno">
-							<div class="jury">
-								Nombre Trabajo de Grado:
-							</div>
+							<form role="form" id="editForm" action="" method="post">
+							<div class="form-group">
+								<label for="editDoc">Nombre Trabajo de Grado:</label><br>
+								<%=gradework.name%>
+							</div>	
 							
-							<div class="jury">
-								Estudiante:
-							</div>
+							<div class="form-group">
+								<label for="editDoc">Estudiante:</label><br>
+								Estudiante
+								<!-- < gradework.users.where(users.roles.name: "Student").each do |estudiante| %>  <estudiante.name %><end%> -->
+							</div>	
 							
-							<div class="jury">
-								Descripción:
-							</div>
+							<div class="form-group">
+								<label for="editDoc">Descripción:</label><br>
+								Descripción
+							</div>	
+							
+							</form>		
 							
 							<button type="button" class="btn btn-default">Ver mas</button>	
 							
 						</div>
-
-						<div class="Duno">
-							<div class="jury">
-								Nombre Trabajo de Grado:
-							</div>
-							
-							<div class="jury">
-								Estudiante:
-							</div>
-							
-							<div class="jury">
-								Descripción:
-							</div>
-							
-							<button type="button" class="btn btn-default">Ver mas</button>
-							
-						</div>
-
-
-						<div class="Duno">
-							<div class="jury">
-								Nombre Trabajo de Grado:
-							</div>
-							
-							<div class="jury">
-								Estudiante:
-							</div>
-							
-							<div class="jury">
-								Descripción:
-							</div>
-							
-							<button type="button" class="btn btn-default">Ver mas</button>
-							
-						</div>
-
-
-						<div class="Duno">
-							<div class="jury">
-								Nombre Trabajo de Grado:
-							</div>
-							
-							<div class="jury">
-								Estudiante:
-							</div>
-							
-							<div class="jury">
-								Descripción:
-							</div>
-							
-							<button type="button" class="btn btn-default">Ver mas</button>
-							
-						</div>
-
-
+						
+						<% end %>
 
 					  </div>
+					  
 					</div>
 				</div>				
 				</center>
