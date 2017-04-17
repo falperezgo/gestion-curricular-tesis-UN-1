@@ -10,7 +10,39 @@ class UserTest < ActiveSupport::TestCase
       refute @user.valid?, "saved without email"
       assert_not_nil @user.errors[:email], "no validation error for email present"
   end
+	
+   test "unique email" do
+	   @user = User.new(:email => users(:duplicate).email)
+	   assert !@user.save
+	   assert_equal ["has already been taken"], @user.errors[:email]
+   end
+	
+   test "unique identification" do
+	   @user = User.new(:identification => users(:duplicate).identification)
+	   assert !@user.save
+	   assert_equal ["has already been taken"], @user.errors[:identification]
+   end
+	
+   test "firstname should be a String" do
+       assert_instance_of String, @user.firstname
+   end
     
+   test "identification should be a Bignum"  do
+       assert_instance_of Bignum, @user.identification
+   end
+    
+   test "lastname should be a String" do
+       assert_instance_of String, @user.lastname
+   end
+    
+   test "phone should be a Fixnum" do
+       assert_instance_of Fixnum, @user.phone
+   end
+    
+   test "email should be a String" do
+       assert_instance_of String, @user.email
+   end
+
    test "invalid without firstname" do
       @user.firstname = nil
       refute @user.valid?, "saved without firstname"

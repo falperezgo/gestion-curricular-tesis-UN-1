@@ -13,3 +13,10 @@ two:
   email: gmail@hotmail.com
   identification: 125526299
   phone: 316161719
+  
+duplicate:
+  firstname: Daniel
+  lastname: Goodwan
+  email: gmail@hotmail.com
+  identification: 125526299
+  phone: 3161234
