@@ -5,7 +5,19 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+
+    @name = params[:filter]
+    @doc = params[:identification]
+
+
+    if @name != ""
+      @users = User.where("firstname LIKE ? OR lastname LIKE ?", "%#{@name}%", "%#{@name}%")
+    end
+    if @doc != ""
+      @users = User.where("identification::varchar LIKE ?", "%#{@doc}%")
+    else
+      @users = User.all
+    end
   end
 
   # GET /users/1
@@ -21,8 +33,8 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-      @rol_users = @user.roles.ids
-      @roles = Role.all
+    @rol_users = @user.roles.ids
+    @roles = Role.all
   end
 
   # POST /users
@@ -34,15 +46,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if params.has_key?(:rol) and params[:rol] != [""]
-    role_id = params[:rol]
-    @user.roles << Role.find(role_id)
+      role_id = params[:rol]
+      @user.roles << Role.find(role_id)
     end
 
     respond_to do |format|
       if @user.save
 
-     #   user_id = @user.id
-     #   RoleUser.create(role_id: user_id, user_id: user_id)
+        #   user_id = @user.id
+        #   RoleUser.create(role_id: user_id, user_id: user_id)
 
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
@@ -86,13 +98,13 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:firstname, :lastname, :email, :identification, :phone )
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:firstname, :lastname, :email, :identification, :phone )
+  end
 end
