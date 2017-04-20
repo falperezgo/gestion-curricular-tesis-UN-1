@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/cschiewek/devise_ldap_authenticatable.git
+  revision: 9f7699d913f715afd4f2a99b80733eda52b1d88a
+  specs:
+    devise_ldap_authenticatable (0.8.6)
+      devise (>= 3.4.1)
+      net-ldap (>= 0.6, != 0.12)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,6 +49,9 @@ GEM
     arel (7.1.4)
     autoprefixer-rails (6.7.7.1)
       execjs
+    bcrypt (3.1.11)
+    bcrypt (3.1.11-x64-mingw32)
+    bcrypt (3.1.11-x86-mingw32)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -60,6 +71,12 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     debug_inspector (0.0.2)
+    devise (4.2.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.1)
+      responders
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
     faker (1.7.3)
@@ -94,6 +111,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
+    net-ldap (0.16.0)
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
@@ -101,6 +119,7 @@ GEM
       mini_portile2 (~> 2.1.0)
     nokogiri (1.7.1-x86-mingw32)
       mini_portile2 (~> 2.1.0)
+    orm_adapter (0.5.0)
     pg (0.20.0)
     pg (0.20.0-x64-mingw32)
     pg (0.20.0-x86-mingw32)
@@ -136,6 +155,8 @@ GEM
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
     rb-readline (0.5.4)
+    responders (2.3.0)
+      railties (>= 4.2.0, < 5.1)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -167,6 +188,8 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (3.1.9)
       execjs (>= 0.3.0, < 3)
+    warden (1.2.7)
+      rack (>= 1.0)
     web-console (3.4.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -187,6 +210,7 @@ DEPENDENCIES
   byebug
   carrierwave (~> 0.10.0)
   coffee-rails (~> 4.2)
+  devise_ldap_authenticatable!
   faker
   font-awesome-rails
   jbuilder (~> 2.5)

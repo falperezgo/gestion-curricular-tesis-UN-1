@@ -1,4 +1,13 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :ldap_authenticatable,
+         :rememberable, :trackable, :validatable,
+         :authentication_keys => [:username]
+
+  validates :username, :presence => true, :uniqueness => {
+    :case_sensitive => false
+  }
 
   has_and_belongs_to_many :gradeworks
   has_and_belongs_to_many :roles
@@ -6,8 +15,7 @@ class User < ApplicationRecord
 
 
 
-  validates :firstname, :lastname, :phone, presence: true
-  validates :email, :identification, presence: true, uniqueness: true
+  validates :firstname, :lastname, presence: true  
 
   default_scope {order("users.firstname ASC")}
 
@@ -17,7 +25,11 @@ class User < ApplicationRecord
   scope :order_by_identification, -> (ord) {order("users.identification #{ord}")}
 
 
-
+  def ldap_before_save
+     self.email = Devise::LDAP::Adapter.get_ldap_param(self.username,"mail").first
+     self.firstname = Devise::LDAP::Adapter.get_ldap_param(self.username,"givenname").first
+     self.lastname = Devise::LDAP::Adapter.get_ldap_param(self.username,"sn").first
+  end
 
 
   def full_name
